@@ -1,18 +1,8 @@
-# SyntaxQuizz
-Group Project- Building a Quiz Web App
+# React + Vite
 
-#Quiz App Project Repository
-This repository contains the codebase for a dynamic quiz application designed to engage users with interactive quizzes across various categories. The app includes features for user authentication, customizable quiz creation, and progress tracking.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-#Key Features:
+Currently, two official plugins are available:
 
-User Authentication: Allow users to sign up, log in, and manage their profiles.
-Quiz Creation: Enable users to create and customize quizzes with different question types.
-Quiz Attempt: Implement quiz functionality with timer, scoring, and instant feedback.
-Dashboard: Provide users with a personalized dashboard to track quiz history and progress.
-Deployment: Configure deployment pipelines for seamless deployment of the app.
-Tech Stack:
-
-Frontend: React.js, Redux
-Backend: Node.js, Express.js, MongoDB
-Deployment: 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
