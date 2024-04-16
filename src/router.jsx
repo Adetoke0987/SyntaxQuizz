@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 
 const router = createBrowserRouter ([
@@ -40,6 +41,10 @@ const router = createBrowserRouter ([
             {
                 path: "*",
                 element: "Page not found"
+            }, 
+            {
+                path: "/dashboard",
+                element: <Dashboard/>
             }
 
         ]
