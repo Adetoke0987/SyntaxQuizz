@@ -12,10 +12,23 @@
   .logo-container {
     flex: 1; 
   }
-  
+  input{
+    display: flex;
+    align-items: center;
+    width: 12vw;
+    height: 4vh;
+    border-radius: 2em;
+    border: 1px solid black;
+    padding-left: 1em;
+    background: rgb(233, 231, 231);
+  }
+
+ input:focus, input:active{
+    outline: 1px solid #0040ff;
+  }
   .logo {
-    width: 50px; 
-    height: auto;
+    width: 100px; 
+    height: 70px;
   }
   
   .links-container {

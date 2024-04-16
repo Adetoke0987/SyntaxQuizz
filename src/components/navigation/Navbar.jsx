@@ -10,6 +10,9 @@ const Navbar = () => {
                     <img src="../../src/assets/syntax.png" alt="logo" className="logo" />
                 </Link>
             </div>
+            <div className='search'>
+                <input type="text" placeholder='search' />
+            </div>
             <div className="links-container">
                 <Link to="/" className="nav-link" style={{ color: '#0040ff' }}>
                     Home
