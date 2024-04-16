@@ -42,9 +42,20 @@ const router = createBrowserRouter ([
                 path: "*",
                 element: "Page not found"
             }, 
+            
+            {
+                path: "/quiz",
+                element: <Questions/>
+            },
             {
                 path: "/dashboard",
-                element: <Dashboard/>
+                element: <Dashboard/>,
+                children: [
+                    {
+                        path: '/user',
+                        element: <UserProfile/>
+                    }
+                ]
             }
 
         ]

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import './navlink.css'
+import './navlink.module.css'
 
 const NavLinks = ({to, children, icon}) => {
   return (
