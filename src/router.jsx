@@ -10,6 +10,7 @@ import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
+import Quiz from "./pages/quiz/Quiz";
 
 
 const router = createBrowserRouter ([
@@ -61,6 +62,10 @@ const router = createBrowserRouter ([
                     {
                         path: '/dashboard/settings',
                         element: <Settings/>
+                    },
+                    {
+                        path: './dashboard/quiz',
+                        element : <Quiz/>
                     }
                 ]
             }
