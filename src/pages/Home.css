@@ -1,4 +1,4 @@
-/* Home.css */
+
 .home-container {
     text-align: left;
     padding: 50px;
@@ -6,31 +6,35 @@
   }
   
   h6 {
-    color: #333;
+    color: #0040ff;
     font-size: 14px;
+    margin-bottom: 20px;
+    margin-top: 10%;
   }
   
   h1 {
-    color: #222;
+    color: #0040ff;
     font-size: 36px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: -15px;
   }
   
   p {
-    color: #666;
+    color: blue;
     font-size: 16px;
-    margin-top: 20px;
+    margin-top: 10px;
+    max-width: 400px;
   }
   
   button {
-    background-color: #007bff;
+    background-color: #0040ff;
     color: #fff;
     font-size: 18px;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 10px;
   }
   
   button:hover {

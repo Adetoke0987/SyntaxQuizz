@@ -1,15 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
-import MainLayout from './layout/MainLayout';
-import { RouterProvider } from 'react-router-dom';
+import { RouterProvider } from "react-router-dom"
+import router from "./router"
 
-const App = () => {
+function App() {
+
+
   return (
-    <Router>
-      <MainLayout />
-      <RouterProvider router={router} />
-    </Router>
-  );
-};
+    <>
+    <RouterProvider router={router}/>
+      
+    </>
+  )
+}
 
-export default App;
+export default App

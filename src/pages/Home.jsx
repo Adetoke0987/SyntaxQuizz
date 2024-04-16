@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <h6>CREATE A FREE</h6>
-      <h1>QUIZ NOW</h1>
+      <h1> QUIZ <span style={{ color: '#f8c35c' }}>NOW</span> </h1>
       <p>
         The versatile data collection tool for professionals.
         Typeform makes asking easy and answering refreshing

@@ -11,7 +11,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="links-container">
-                <Link to="/" className="nav-link">
+                <Link to="/" className="nav-link" style={{ color: '#0040ff' }}>
                     Home
                 </Link>
                 <Link to="/connect" className="nav-link">
@@ -31,7 +31,7 @@ const Navbar = () => {
                 </Link>
                 <i className="fa fa-search search-icon"></i>
                 <Link to="/signup" className="create-button">
-                    Create
+                    Create Quiz
                 </Link>
             </div>
         </nav>

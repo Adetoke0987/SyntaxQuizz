@@ -4,8 +4,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    color: black;
     padding: 10px 20px;
   }
   
@@ -24,7 +24,7 @@
   }
   
   .nav-link {
-    color: #fff;
+    color: black;
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
@@ -40,7 +40,7 @@
   }
   
   .create-button {
-    background-color: #007bff;
+    background-color: #0040ff;
     color: #fff;
     border: none;
     padding: 10px 20px;
