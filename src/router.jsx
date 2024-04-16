@@ -9,7 +9,7 @@ import Pricing from "./pages/Pricing";
 import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
-import Api from "./pages/Api";
+import Settings from "./pages/dashboard/settings/Settings";
 
 
 const router = createBrowserRouter ([
@@ -57,6 +57,10 @@ const router = createBrowserRouter ([
                     {
                         path: '/dashboard/user',
                         element: <UserProfile/>
+                    }, 
+                    {
+                        path: '/dashboard/settings',
+                        element: <Settings/>
                     }
                 ]
             }

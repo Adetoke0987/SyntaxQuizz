@@ -1,7 +1,7 @@
 a{
     display: flex;
     align-items: center;
-    padding: 1em;
+    padding: 1em 0 1em 0;
     cursor: pointer;
     text-decoration: none;
     color: black;
@@ -11,8 +11,4 @@ a{
     
 }
 
-a .active{
-    color: blue;
-    text-decoration: none;
-    background-color: gold;
-}
+
