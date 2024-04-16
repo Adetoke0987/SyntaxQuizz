@@ -10,6 +10,8 @@ import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
+import Instruction from "./pages/quiz/Instruction";
+import Congratulation from "./pages/quiz/Congratulation";
 
 
 const router = createBrowserRouter ([
@@ -50,6 +52,17 @@ const router = createBrowserRouter ([
                 path: "/quiz",
                 element: <Questions/>
             },
+
+            {
+                path: "/instrction",
+                element:<Instruction/>
+            },
+
+            {
+                path:"/congratulation",
+                element:<Congratulation/>
+            },
+            
             {
                 path: "/dashboard",
                 element: <Dashboard/>,
