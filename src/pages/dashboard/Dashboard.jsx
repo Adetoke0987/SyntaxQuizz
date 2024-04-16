@@ -1,15 +1,14 @@
-import React from 'react'
-import Sidebar from '../../components/sidebar/Sidebar';
-import { Outlet } from 'react-router-dom';
-
+import React from "react";
+import Sidebar from "../../components/sidebar/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
     <div>
-        <Sidebar/>
-        <Outlet/>
+      <Sidebar />
+      <Outlet />
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;

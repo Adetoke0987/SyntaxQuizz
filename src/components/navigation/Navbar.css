@@ -6,7 +6,9 @@
     align-items: center;
     background-color: white;
     color: black;
-    padding: 10px 20px;
+    height: 10vh;
+    align-items: center;
+    padding: 0 2em 0 2em;
   }
   
   .logo-container {
@@ -27,10 +29,11 @@
 
  input:focus, input:active{
     outline: 1px solid #0040ff;
+    border: none;
   }
   .logo {
-    width: 100px; 
-    height: 70px;
+    width: 6em; 
+    height: 4em;
   }
   
   .links-container {
@@ -47,6 +50,7 @@
   
   .nav-link:hover {
     text-decoration: underline;
+ 
   }
   
   .search-icon {
@@ -67,5 +71,7 @@
   .create-button:hover {
     background-color: #0056b3;
     cursor: pointer;
+
   }
+ 
   
