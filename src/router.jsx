@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Help from "./pages/Help";
 import LoginComponent from "./components/loginComponents/LoginComponent";
 import Questions from "./pages/quiz/Questions";
-import Api from './pages/Api'
+import  Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
 import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
@@ -23,8 +23,8 @@ const router = createBrowserRouter ([
                 element: <Home />
             },
             {
-                path: "/api",
-                element: <Api/>
+                path: "/connect",
+                element: <Connect/>
             },
             {
                 path: "/pricing",
