@@ -10,12 +10,12 @@ const Questions =()=>{
             
             <h3>Where is Sail located</h3>
 
-            <span>
-                <h5><input type ="checkbox"/>wwwwwwwwwwfdtdh</h5>
-                <h5><input type ="checkbox"/>wwwwwwwwwwfdtdh</h5>
-                <h5><input type ="checkbox"/>wwwwwwwwwwfdtdh</h5>
-                <h5><input type ="checkbox"/>wwwwwwwwwwfdtdh</h5>
-            </span>
+            <div>
+                <span>gfyvtgvbyg</span>
+                <span>bhu gyh</span>
+                <span>ihujhnipo</span>
+                <span>tu7gyyh</span>
+            </div>
 
             <button type="submit">Submit</button>
 
