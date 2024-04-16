@@ -12,7 +12,6 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
 import Instruction from "./pages/quiz/Instruction";
 import Congratulation from "./pages/quiz/Congratulation";
-import Questions from "./pages/quiz/Questions";
 
 
 const router = createBrowserRouter ([
