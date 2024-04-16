@@ -6,7 +6,7 @@ import {AiOutlineSetting} from 'react-icons/ai'
 
 const links = [
     {to: "/", icon: <FaHome/>, label: "Home", id: 1},
-    {to: "/user", icon: <FaUser/>, label: "Users", id: 2},
+    {to: "/dashboard/user", icon: <FaUser/>, label: "User Profile", id: 2},
     {to: "/settings", icon: <AiOutlineSetting/>, label: "Settings", id: 3}
 ]
 const Sidebar = () => {

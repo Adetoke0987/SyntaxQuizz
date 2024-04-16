@@ -3,10 +3,13 @@ import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import Help from "./pages/Help";
 import LoginComponent from "./components/loginComponents/LoginComponent";
-import Connect from "./pages/Connect";
+import Questions from "./pages/quiz/Questions";
+import Api from './pages/Api'
 import Pricing from "./pages/Pricing";
 import Signup from "./pages/Signup";
+import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
+import Api from "./pages/Api";
 
 
 const router = createBrowserRouter ([
@@ -19,8 +22,8 @@ const router = createBrowserRouter ([
                 element: <Home />
             },
             {
-                path: "/connect",
-                element: <Connect />
+                path: "/api",
+                element: <Api/>
             },
             {
                 path: "/pricing",
@@ -52,7 +55,7 @@ const router = createBrowserRouter ([
                 element: <Dashboard/>,
                 children: [
                     {
-                        path: '/user',
+                        path: '/dashboard/user',
                         element: <UserProfile/>
                     }
                 ]

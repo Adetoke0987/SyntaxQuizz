@@ -17,8 +17,8 @@ const Navbar = () => {
         <Link to="/" className="nav-link">
           Home
         </Link>
-        <Link to="/connect" className="nav-link">
-          Connect
+        <Link to="/api" className="nav-link">
+          Api
         </Link>
         <Link to="/pricing" className="nav-link">
           Pricing
