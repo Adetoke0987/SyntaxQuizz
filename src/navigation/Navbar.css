@@ -1,0 +1,56 @@
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .logo-container {
+    flex: 1; 
+  }
+  
+  .logo {
+    width: 50px; 
+    height: auto;
+  }
+  
+  .links-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+  .search-icon {
+    font-size: 20px;
+    margin-right: 10px;
+  }
+  
+  .create-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+  }
+  
