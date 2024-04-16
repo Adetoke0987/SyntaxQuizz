@@ -1,78 +1,56 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import Inputs from './Inputs'
+import { userData } from './UserContext'
+import { Link } from 'react-router-dom'
+
 
 const LoginComponent = () => {
+    const{users} = useContext(userData)
 
-  const [users, setUsers] = useState([])
-  const [userDetails, setUserDetails] = useState({
-    fullname:"",
-    email:"",
-    password:""
-  })
-
-  const handleInputChange = (e)=>{
-    const {name, value} = e.target
-    setUserDetails({
-      ...userDetails,
-      [name]: value
-    })
-  }
-
-  const addUsers= (e)=>{
-    e.preventDefault()
-    setUsers([
-      ...users,
-      userDetails
-    ])
-
-  
-  }
-
-  // An Array containing the input properties from the ./inputs.jsx
-  const inputs = [
-    {
-      labelText: "Full Name",
-      inputType: "text",
-      placeholderText: "Enter Your Name",
-      inputName: "fullname",
-      inputValue: userDetails.fullname,
-     
-
-    },
-    {
-      labelText: "Working Email",
-      inputType: "email",
-      placeholderText: "Enter Your Email",
-      inputName: "email",
-      inputValue: userDetails.email,
-      
-    },
-    {
-      labelText: "Password",
-      inputType: "password",
-      placeholderText: "",
-      inputName: "password",
-      inputValue: userDetails.password,
-
-    }
-  ]
- 
-
+    const {fullname, password} = users
+    const logInInputs = [
+        {
+          labelText: "Full Name Or Email",
+          inputType: "text",
+          placeholderText: "Enter Your Name",
+          inputName: "fullname",
+          inputValue: fullname,
+         
+    
+        },
+        {
+          labelText: "Password",
+          inputType: "password",
+          placeholderText: "Password",
+          inputName: "passwod",
+          inputValue:password,
+          
+        },
+    ]
   return (
     <div>
-      <form onSubmit={addUsers}>
-        <h1>Welcome to Syntax Quizzez</h1>
-        {
-          inputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
+      <h2>Login</h2>
+
+      <form onSubmit={null}>
+         {
+          logInInputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
             return(
               <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
-               placeholderText={placeholderText} key={labelText} inputValue={inputValue} inputfunc={handleInputChange} />
+               placeholderText={placeholderText} key={labelText} inputValue={inputValue}  />
             )
           })
         }
-        <button>Submit</button>
-
+        <Link to={"/"}>
+          <button>Log in</button>
+        </Link>
+      
+        <div>
+            <p>Dont have an Account?</p>
+            <Link to={'/signup'}>Register</Link>
+        </div>
       </form>
+     
+       
     </div>
   )
 }
