@@ -4,20 +4,34 @@ import React from "react";
 
 const Instruction =()=>{
     return(
-<<<<<<< HEAD
+
         <>
-        </>
-=======
         <div>
-
-
-            <div>
-                <h1>Category:</h1>
-            </div>
-
-            
+            <h2>Quiz Instruction</h2>
         </div>
->>>>>>> d2c439a4d296d56e417bc5dba46417cfa97b184d
+
+        <div>
+            <ul>
+                <li>
+                This quizzes consist of question to carefully assess your comprehension of the 
+                information presented in the topic covered in the module.
+                Each question on the quiz is of mulitple choice or true or false format and you have an avearge of 10sec for each question
+
+                </li>
+
+                <li>On the selection of the response, the next question pop.</li>
+
+
+                <li>Should you be unsure of the question, it is advisable to skip to the next</li>
+
+
+            </ul>           
+                
+        
+        </div>
+
+        </>      
+
     )
 }
 
