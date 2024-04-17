@@ -1,3 +1,4 @@
+
 import React, { useContext } from 'react'
 import Inputs from './Inputs'
 import { userData } from './UserContext'
@@ -56,3 +57,28 @@ const LoginComponent = () => {
 }
 
 export default LoginComponent
+ Quizzez</h1>
+        {inputs.map(({ labelText, inputType, inputName, placeholderText, inputValue }) => {
+          return (
+            <Inputs
+              key={inputName}
+              labelText={labelText}
+              inputType={inputType}
+              inputName={inputName}
+              placeholderText={placeholderText}
+              inputValue={inputValue}
+              inputfunc={handleInputChange}
+            />
+          );
+        })}
+        <button type="submit" onSubmit="()=>(
+           return(<Dashboard>)
+        )">Submit</button>
+      </form>
+
+    </div>
+  );
+};
+
+export default LoginComponent;
+

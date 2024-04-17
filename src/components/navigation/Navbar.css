@@ -62,6 +62,7 @@
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    font-size: small;
   }
   
   .create-button:hover {
