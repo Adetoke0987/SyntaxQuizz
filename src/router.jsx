@@ -11,6 +11,7 @@ import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
 import Quiz from "./pages/quiz/Quiz";
+import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
 
 
 const router = createBrowserRouter ([
@@ -40,7 +41,7 @@ const router = createBrowserRouter ([
             },
             {
                 path: "/signup",
-                element: <Signup />
+                element: <RegistrationComponent />
             },
             {
                 path: "*",
