@@ -2,11 +2,11 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import Help from "./pages/Help";
-import LoginComponent from "./components/loginComponents/LoginComponent";
+import Regristraton from "./components/loginComponents/RegistrationComponent";
 import Questions from "./pages/quiz/Questions";
 import  Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
-import Signup from "./pages/Signup";
+import LoginComponent from "./components/loginComponents/LoginComponent";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
@@ -40,7 +40,7 @@ const router = createBrowserRouter ([
             },
             {
                 path: "/signup",
-                element: <Signup />
+                element: <Regristraton />
             },
             {
                 path: "*",
