@@ -68,11 +68,11 @@ const LoginComponent = () => {
             />
           );
         })}
-        <button type="submit">Submit</button>
+        <button type="submit" onSubmit="()=>(
+           return(<Dashboard>)
+        )">Submit</button>
       </form>
 
-      {users.length > 0 ? <Dashboard user={users[0]} /> : null}
-      {/* Render Dashboard component if user is logged in */}
     </div>
   );
 };
