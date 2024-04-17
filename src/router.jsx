@@ -4,12 +4,13 @@ import Home from "./pages/Home";
 import Help from "./pages/Help";
 import LoginComponent from "./components/loginComponents/LoginComponent";
 import Questions from "./pages/quiz/Questions";
-import Connect from "./pages/Connect";
+import  Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
-import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
+import Quiz from "./pages/quiz/Quiz";
+import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
 
 
 const router = createBrowserRouter ([
@@ -39,7 +40,7 @@ const router = createBrowserRouter ([
             },
             {
                 path: "/signup",
-                element: <Signup />
+                element: <RegistrationComponent />
             },
             {
                 path: "*",
@@ -55,12 +56,16 @@ const router = createBrowserRouter ([
                 element: <Dashboard/>,
                 children: [
                     {
-                        path: '/dashboard/user',
+                        index: true,
                         element: <UserProfile/>
                     }, 
                     {
                         path: '/dashboard/settings',
                         element: <Settings/>
+                    },
+                    {
+                        path: '/dashboard/quiz',
+                        element : <Quiz/>
                     }
                 ]
             }

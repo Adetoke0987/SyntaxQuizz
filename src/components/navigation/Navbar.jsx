@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
@@ -17,8 +18,8 @@ const Navbar = () => {
         <Link to="/" className="nav-link">
           Home
         </Link>
-        <Link to="/api" className="nav-link">
-          Api
+        <Link to="/connect" className="nav-link">
+          Connect
         </Link>
         <Link to="/pricing" className="nav-link">
           Pricing
@@ -42,3 +43,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

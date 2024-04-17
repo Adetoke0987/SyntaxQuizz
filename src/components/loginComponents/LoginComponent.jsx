@@ -1,80 +1,65 @@
-import React, { useState } from 'react'
-import Inputs from './Inputs'
+import React, { useContext } from 'react';
+import Inputs from './Inputs';
+// import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
+import { userData } from './UserContext';
+import { Link } from 'react-router-dom/dist';
 
 const LoginComponent = () => {
+  const{users} = useContext(userData)
 
-  const [users, setUsers] = useState([])
-  const [userDetails, setUserDetails] = useState({
-    fullname:"",
-    email:"",
-    password:""
-  })
+  const {fullname, password} = users
+  const logInInputs = [
+      {
+        labelText: "Full Name Or Email",
+        inputType: "text",
+        placeholderText: "Enter Your Name",
+        inputName: "fullname",
+        inputValue: fullname,
 
-  const handleInputChange = (e)=>{
-    const {name, value} = e.target
-    setUserDetails({
-      ...userDetails,
-      [name]: value
-    })
-  }
 
-  const addUsers= (e)=>{
-    e.preventDefault()
-    setUsers([
-      ...users,
-      userDetails
-    ])
+      },
+      {
+        labelText: "Password",
+        inputType: "password",
+        placeholderText: "Password",
+        inputName: "passwod",
+        inputValue:password,
 
-  
-  }
-
-  // An Array containing the input properties from the ./inputs.jsx
-  const inputs = [
-    {
-      labelText: "Full Name",
-      inputType: "text",
-      placeholderText: "Enter Your Name",
-      inputName: "fullname",
-      inputValue: userDetails.fullname,
-     
-
-    },
-    {
-      labelText: "Working Email",
-      inputType: "email",
-      placeholderText: "Enter Your Email",
-      inputName: "email",
-      inputValue: userDetails.email,
-      
-    },
-    {
-      labelText: "Password",
-      inputType: "password",
-      placeholderText: "",
-      inputName: "password",
-      inputValue: userDetails.password,
-
-    }
+      },
   ]
- 
 
   return (
     <div>
-      <form onSubmit={addUsers}>
-        <h1>Welcome to Syntax Quizzez</h1>
-        {
-          inputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
-            return(
-              <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
-               placeholderText={placeholderText} key={labelText} inputValue={inputValue} inputfunc={handleInputChange} />
-            )
-          })
-        }
-        <button>Submit</button>
+    
+      <h2>Login</h2>
 
+        <form onSubmit={null}>
+         {
+              logInInputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
+               return(
+                 <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
+                placeholderText={placeholderText} key={labelText} inputValue={inputValue} />  
+
+               ) 
+               
+                
+              })
+            }
+        <Link to={"/dashboard"}>
+          <button>Log in</button>
+        </Link>
+
+        <div>
+            <p>Dont have an Account?</p>
+            <Link to={'/signup'}>Register</Link>
+        </div>
       </form>
-    </div>
-  )
-}
 
-export default LoginComponent
+
+    </div>
+
+
+  );
+};
+
+export default LoginComponent;
