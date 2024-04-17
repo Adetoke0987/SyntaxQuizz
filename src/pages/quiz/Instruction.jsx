@@ -4,10 +4,6 @@ import React from "react";
 
 const Instruction =()=>{
     return(
-<<<<<<< HEAD
-        <>
-        </>
-=======
         <div>
 
 
@@ -17,7 +13,6 @@ const Instruction =()=>{
 
             
         </div>
->>>>>>> d2c439a4d296d56e417bc5dba46417cfa97b184d
     )
 }
 

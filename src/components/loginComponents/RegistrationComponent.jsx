@@ -93,7 +93,7 @@ const RegistrationComponent = () => {
 
         <div className={style.loginOption}>
           <p>Have an Account?</p>
-          <Link to={""}> <h3>Login</h3> </Link>
+          <Link to='/login'> <h3>Login</h3> </Link>
         </div>
       </div>
 

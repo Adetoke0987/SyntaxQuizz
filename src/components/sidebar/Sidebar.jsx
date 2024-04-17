@@ -6,6 +6,9 @@ import { FaUser } from 'react-icons/fa';
 import { MdQuiz } from 'react-icons/md';
 import { BsRecord } from 'react-icons/bs';
 import { CiSettings } from "react-icons/ci";
+
+
+
 const links = [
   { to: '/dashboard/', icon: <FaUser />, label: 'User Profile', id: 1 },
   { to: '/dashboard/quiz', icon: <MdQuiz />, label: 'Quiz', id: 2 },

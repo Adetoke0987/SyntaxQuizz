@@ -6,7 +6,6 @@ import LoginComponent from "./components/loginComponents/LoginComponent";
 import Questions from "./pages/quiz/Questions";
 import  Connect from "./pages/Connect";
 import Pricing from "./pages/Pricing";
-import Signup from "./pages/Signup";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
@@ -57,7 +56,7 @@ const router = createBrowserRouter ([
                 element: <Dashboard/>,
                 children: [
                     {
-                        path: '/dashboard/user',
+                        index: true,
                         element: <UserProfile/>
                     }, 
                     {
@@ -65,7 +64,7 @@ const router = createBrowserRouter ([
                         element: <Settings/>
                     },
                     {
-                        path: './dashboard/quiz',
+                        path: '/dashboard/quiz',
                         element : <Quiz/>
                     }
                 ]
