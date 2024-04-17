@@ -1,80 +1,80 @@
-import React, { useState } from 'react'
-import Inputs from './Inputs'
+import React, { useState } from 'react';
+import Inputs from './Inputs';
+import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
 
 const LoginComponent = () => {
-
-  const [users, setUsers] = useState([])
+  const [users, setUsers] = useState([]);
   const [userDetails, setUserDetails] = useState({
-    fullname:"",
-    email:"",
-    password:""
-  })
+    fullname: '',
+    email: '',
+    password: ''
+  });
 
-  const handleInputChange = (e)=>{
-    const {name, value} = e.target
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
     setUserDetails({
       ...userDetails,
       [name]: value
-    })
-  }
+    });
+  };
 
-  const addUsers= (e)=>{
-    e.preventDefault()
-    setUsers([
-      ...users,
-      userDetails
-    ])
+  const addUsers = (e) => {
+    e.preventDefault();
+    if (userDetails.fullname && userDetails.email && userDetails.password) {
+      setUsers([userDetails]);
+    } else {
+      alert('Please fill in all fields.');
+    }
+  };
 
-  
-  }
-
-  // An Array containing the input properties from the ./inputs.jsx
   const inputs = [
     {
-      labelText: "Full Name",
-      inputType: "text",
-      placeholderText: "Enter Your Name",
-      inputName: "fullname",
-      inputValue: userDetails.fullname,
-     
-
+      labelText: 'Full Name',
+      inputType: 'text',
+      placeholderText: 'Enter Your Name',
+      inputName: 'fullname',
+      inputValue: userDetails.fullname
     },
     {
-      labelText: "Working Email",
-      inputType: "email",
-      placeholderText: "Enter Your Email",
-      inputName: "email",
-      inputValue: userDetails.email,
-      
+      labelText: 'Working Email',
+      inputType: 'email',
+      placeholderText: 'Enter Your Email',
+      inputName: 'email',
+      inputValue: userDetails.email
     },
     {
-      labelText: "Password",
-      inputType: "password",
-      placeholderText: "",
-      inputName: "password",
-      inputValue: userDetails.password,
-
+      labelText: 'Password',
+      inputType: 'password',
+      placeholderText: 'Enter Your Password',
+      inputName: 'password',
+      inputValue: userDetails.password
     }
-  ]
- 
+  ];
 
   return (
     <div>
       <form onSubmit={addUsers}>
         <h1>Welcome to Syntax Quizzez</h1>
-        {
-          inputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
-            return(
-              <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
-               placeholderText={placeholderText} key={labelText} inputValue={inputValue} inputfunc={handleInputChange} />
-            )
-          })
-        }
-        <button>Submit</button>
-
+        {inputs.map(({ labelText, inputType, inputName, placeholderText, inputValue }) => {
+          return (
+            <Inputs
+              key={inputName}
+              labelText={labelText}
+              inputType={inputType}
+              inputName={inputName}
+              placeholderText={placeholderText}
+              inputValue={inputValue}
+              inputfunc={handleInputChange}
+            />
+          );
+        })}
+        <button type="submit">Submit</button>
       </form>
-    </div>
-  )
-}
 
-export default LoginComponent
+      {users.length > 0 ? <Dashboard user={users[0]} /> : null}
+      {/* Render Dashboard component if user is logged in */}
+    </div>
+  );
+};
+
+export default LoginComponent;
