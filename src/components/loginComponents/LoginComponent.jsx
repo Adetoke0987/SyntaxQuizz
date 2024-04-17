@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Inputs from './Inputs';
-import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
+// import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
+import { userData } from './UserContext';
+import { Link } from 'react-router-dom/dist';
 
 const LoginComponent = () => {
   const{users} = useContext(userData)
@@ -34,12 +36,16 @@ const LoginComponent = () => {
         <form onSubmit={null}>
          {
               logInInputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
-            <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
-            placeholderText={placeholderText} key={labelText} inputValue={inputValue}  />
+               return(
+                 <Inputs labelText={labelText} inputType={inputType} inputName={inputName}
+                placeholderText={placeholderText} key={labelText} inputValue={inputValue} />  
+
+               ) 
+               
                 
               })
             }
-            <Link to={"/"}>
+        <Link to={"/dashboard"}>
           <button>Log in</button>
         </Link>
 
