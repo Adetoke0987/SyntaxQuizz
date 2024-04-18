@@ -10,15 +10,7 @@ import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
 import Quiz from "./pages/quiz/Quiz";
-<<<<<<< Updated upstream
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
-=======
-import Cartoon from "./pages/quiz/allCategories/Cartoon";
-import Geography from "./pages/quiz/allCategories/Geography"
-import Music from "./pages/quiz/allCategories/Music"
-import Sport from "./pages/quiz/allCategories/Sport"
-import Science from "./pages/quiz/allCategories/Science"
->>>>>>> Stashed changes
 
 
 const router = createBrowserRouter ([
@@ -56,7 +48,7 @@ const router = createBrowserRouter ([
             }, 
             
             {
-                path: "/quiz",
+                path: "/questions",
                 element: <Questions/>
             },
             {
@@ -72,38 +64,8 @@ const router = createBrowserRouter ([
                         element: <Settings/>
                     },
                     {
-<<<<<<< Updated upstream
                         path: '/dashboard/quiz',
                         element : <Quiz/>
-=======
-                        path: './dashboard/quiz',
-                        element : <Quiz/>,
-                        children:[
-                            {
-                                path:'/dashboard/quiz/cartoon',
-                                element:<Cartoon/>
-                            },
-
-                            {
-                                path:'/dashboard/quiz/geography',
-                                element:<Geography/>
-                            },
-
-                            {
-                                path:'/dashboard/quiz/music',
-                                element:<Music/>
-                            },
-                            {
-                                path:'/dashboard/quiz/science',
-                                element:<Science/>
-                            },
-                            {
-                                path:'/dashboard/quiz/sport',
-                                element:<Sport/>
-                            },
-
-                        ]
->>>>>>> Stashed changes
                     }
                 ]
             }

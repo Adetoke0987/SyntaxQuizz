@@ -1,13 +1,15 @@
 import React from "react"
+import './question.css';
+// import './Home.css'; 
 
 
 const Questions =()=>{
     return(
         <>
             <div id="main">
-                <div>
-                    <h1>{Questions.category}</h1>
-                    <h3>question  no | no of question</h3>
+                <div id="question">
+                    {/* <h1>{Questions.category}</h1> */}
+                    <h3>Please pick correctly</h3>
                     <p>who is presdent of nigeria</p>
                     
                     <div id="answers">
@@ -25,4 +27,4 @@ const Questions =()=>{
 }
 
 
-export default Questions
+export default Questions 

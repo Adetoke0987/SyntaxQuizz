@@ -4,10 +4,6 @@ import React from "react";
 
 const Instruction =()=>{
     return(
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         <div>
 
 
@@ -17,10 +13,6 @@ const Instruction =()=>{
 
 
         </div>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     )
 }
 
