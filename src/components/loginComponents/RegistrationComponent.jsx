@@ -77,6 +77,9 @@ const RegistrationComponent = () => {
 
   return (
     <div>
+    <div>
+    <img src="../components/loginComponents/RegistrationComponent" alt="" />
+  </div>
       <form onSubmit={addUsers}>
         <h1>Welcome to Syntax Quizzez</h1>
         <h2>Register Your Account</h2>
@@ -99,6 +102,7 @@ const RegistrationComponent = () => {
 
 
       </form>
+      
 
 
 
