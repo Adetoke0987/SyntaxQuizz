@@ -13,9 +13,7 @@ const GeneralSettings = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    // Implement logic to update user settings here
-    // This might involve API calls or database interactions
-
+    
     // Clear form fields after submission (optional)
     setFullName('');
     setEmail('');

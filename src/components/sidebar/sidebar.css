@@ -1,51 +1,9 @@
-/* side-wrapper */
-#side-wrapper {
-    display: flex;
-    justify-content: space-evenly; /* Distribute content evenly vertically */
-    flex-direction: column;
-    background-color: rgba(255, 255, 200, 0.747); /* Semi-transparent light yellow */
-    color: black;
-    align-items: center;
-    width: 13vw;
-    height: 80vh;
-    padding: 15px; /* Add some padding for spacing */
-    /* Add a transition for smooth hover effects (optional) */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  #side-wrapper:hover {
-    /* Optional hover effect styles (adjust as desired) */
-    background-color: rgba(255, 255, 150, 0.747); /* Slightly lighter yellow on hover */
-    cursor: pointer;
-  }
-  
-  /* gold (Assuming this is the top section of the sidebar) */
-  #gold {
-    display: flex; /* Allow stacking elements within the gold section */
-    flex-direction: column; /* Stack elements vertically */
-    width: 100%; /* Take up the full width of the sidebar */
-  }
-  
-  /* links (Assuming this holds the navigation links) */
-  #links {
-    display: flex; /* Allow horizontal layout for navigation links */
-    flex-direction: column; /* Stack links vertically */
-    gap: 10px; /* Add spacing between links */
-    width: 100%; /* Take up the full width of the gold section */
-  }
-  
-  /* active class (for styling active navigation links) */
-  .active {
-    background-color: blue; /* Highlight active links with blue background */
-    /* Add other styles for active links as desired (e.g., bolder text) */
-  }
-  
-  /* dropdown-wrapper (for styling the settings dropdown) */
-  .dropdown-wrapper {
+/* sidebar.css */
+
+/* dropdown-wrapper (for styling the settings dropdown) */
+.dropdown-wrapper {
     position: relative; /* Enable positioning of the dropdown content */
     width: 100%; /* Take up the full width of the gold section */
-    /* Add a border or separator for the dropdown (optional) */
-    /* border-bottom: 1px solid #ddd; */
   }
   
   /* dropdown-header (for styling the dropdown header) */
@@ -53,9 +11,8 @@
     display: flex; /* Allow horizontal layout for header elements */
     align-items: center; /* Align header content vertically */
     cursor: pointer; /* Indicate clickable behavior for the dropdown */
-    padding: 5px 10px; /* Add some padding for the header */
-    /* Add a hover effect for the dropdown header (optional) */
-    transition: all 0.2s ease-in-out;
+    padding: 10px; /* Add padding for the header */
+    border-bottom: 1px solid #ddd; /* Add a bottom border for separation */
   }
   
   .dropdown-header:hover {
@@ -66,8 +23,10 @@
   .dropdown-content {
     display: none; /* Initially hide the dropdown content */
     position: absolute; /* Position the content relative to the header */
-    background-color: #f1f1f1; /* Light background color for the content */
-    min-width: 100%; /* Ensure the content takes up at least the full width of the header */
+    top: 100%; /* Position below the header */
+    left: 0; /* Align with the left edge of the header */
+    background-color: #fff; /* White background color for the content */
+    min-width: 200px; /* Set a minimum width for the content */
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Subtle shadow effect */
     z-index: 1; /* Ensure the content is displayed above other elements */
   }
@@ -75,5 +34,17 @@
   /* Show the dropdown content when the showSettingsDropdown state is true */
   .dropdown-content.show {
     display: block;
+  }
+  
+  /* dropdown-links (for styling the links inside the dropdown content) */
+  .dropdown-links {
+    padding: 10px; /* Add padding for the links */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Set text color */
+    display: block; /* Make links block-level elements */
+  }
+  
+  .dropdown-links:hover {
+    background-color: #f5f5f5; /* Light background on hover */
   }
   
