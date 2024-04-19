@@ -1,0 +1,42 @@
+/* Styles for the general settings section */
+.general-settings {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .general-settings h2 {
+    /* Styles for the settings title */
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .general-settings label {
+    /* Styles for input labels */
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .general-settings input[type="text"],
+  .general-settings input[type="email"],
+  .general-settings input[type="password"] {
+    /* Styles for text input fields */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .general-settings button {
+    /* Styles for the "Update Settings" button */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

@@ -1,72 +1,72 @@
 import React, { useState } from 'react';
+import './css/settings.css'
 
-const Settings = () => {
-  const [password, setPassword] = useState('');
+const GeneralSettings = () => {
+  // State variables for user settings
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [emailPreferences, setEmailPreferences] = useState(true);
-  const [notificationSettings, setNotificationSettings] = useState(true);
 
-  const handleChangePassword = () => {
-    // Implement password change logic here
-  };
+  // Handle form submission (assuming a form exists)
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const handleSaveSettings = () => {
-    // Implement saving settings logic here
+    // Implement logic to update user settings here
+    // This might involve API calls or database interactions
+
+    // Clear form fields after submission (optional)
+    setFullName('');
+    setEmail('');
+    setCurrentPassword('');
+    setNewPassword('');
+    setConfirmPassword('');
   };
 
   return (
-    <div className="settings">
-      <h2>Settings</h2>
-      <div className="change-password">
-        <h3>Change Password</h3>
+    <div className="general-settings">
+      <h2>General Settings</h2>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="fullName">Full Name:</label>
         <input
-          type="password"
-          placeholder="Current Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          id="fullName"
+          value={fullName}
+          onChange={(e) => setFullName(e.target.value)}
         />
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <label htmlFor="currentPassword">Current Password:</label>
         <input
           type="password"
-          placeholder="New Password"
+          id="currentPassword"
+          value={currentPassword}
+          onChange={(e) => setCurrentPassword(e.target.value)}
+        />
+        <label htmlFor="newPassword">New Password:</label>
+        <input
+          type="password"
+          id="newPassword"
           value={newPassword}
           onChange={(e) => setNewPassword(e.target.value)}
         />
+        <label htmlFor="confirmPassword">Confirm New Password:</label>
         <input
           type="password"
-          placeholder="Confirm New Password"
+          id="confirmPassword"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
-        <button onClick={handleChangePassword}>Change Password</button>
-      </div>
-      <div className="preferences">
-        <h3>Email Preferences</h3>
-        <label>
-          <input
-            type="checkbox"
-            checked={emailPreferences}
-            onChange={() => setEmailPreferences(!emailPreferences)}
-          />
-          Receive promotional emails
-        </label>
-        {/* You can add more email preferences here */}
-      </div>
-      <div className="notification-settings">
-        <h3>Notification Settings</h3>
-        <label>
-          <input
-            type="checkbox"
-            checked={notificationSettings}
-            onChange={() => setNotificationSettings(!notificationSettings)}
-          />
-          Receive push notifications
-        </label>
-        {/* You can add more notification settings here */}
-      </div>
-      <button onClick={handleSaveSettings}>Save Settings</button>
+        <button type="submit">Update Settings</button>
+      </form>
     </div>
   );
 };
 
-export default Settings;
+export default GeneralSettings;

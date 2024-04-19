@@ -9,6 +9,8 @@ import Pricing from "./pages/Pricing";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
+import NotificationSettings from "./pages/dashboard/settings/NotifictionSettings";
+import QuizSettings from "./pages/dashboard/settings/QuizSettings";
 import Quiz from "./pages/quiz/Quiz";
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
 
@@ -61,7 +63,21 @@ const router = createBrowserRouter ([
                     }, 
                     {
                         path: '/dashboard/settings',
-                        element: <Settings/>
+                        element: <Settings/>,
+                        children:[
+                            {
+                                index: true,
+                                element: <Settings/>
+                            },
+                            {
+                                path: './dashboard/settings/notification',
+                                element: <NotificationSettings/>
+                            },
+                            {
+                                path: './dashboard/settings/quizset',
+                                element: <QuizSettings/>
+                            }
+                        ]
                     },
                     {
                         path: '/dashboard/quiz',

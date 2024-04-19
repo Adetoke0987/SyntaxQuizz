@@ -1,0 +1,53 @@
+.quiz-settings {
+    /* Styles for the main container */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .quiz-settings h2 {
+    /* Styles for the settings title */
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .category-options {
+    /* Styles for the category selection area */
+    margin-bottom: 15px;
+  }
+  
+  .category-options label {
+    /* Styles for each category label */
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+  
+  .category-options input[type="checkbox"] {
+    /* Styles for checkbox elements */
+    margin-right: 10px;
+  }
+  
+  .quiz-settings select {
+    /* Styles for the difficulty level dropdown */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .quiz-settings button {
+    /* Styles for the "Save Settings" button */
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Optional: Disable button styling initially */
+    /* opacity: 0.5;
+    pointer-events: none; */
+  }
+  

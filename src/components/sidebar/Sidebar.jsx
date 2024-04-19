@@ -35,7 +35,8 @@ const Sidebar = ({ onLogout }) => {
             {showSettingsDropdown && (
               <div className="dropdown-content">
                 <NavLinks to="/dashboard/settings/general">General Settings</NavLinks>
-                <NavLinks to="/dashboard/settings/quiz">Quiz Settings</NavLinks>
+                <NavLinks to="/dashboard/settings/notication">Notifiction Settings</NavLinks>
+                <NavLinks to="./dashboard/settings/quizset">Quiz Settings </NavLinks>
                 {/* Add more settings links as needed */}
               </div>
             )}
