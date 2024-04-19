@@ -23,14 +23,13 @@ const Sidebar = ({ onLogout }) => {
     <div id="side-wrapper">
       <div id="gold">
         <div id="links">
-          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile" />
-          <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz" />
+          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile" > User Profile</NavLinks> 
+          <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz"  > Quiz</NavLinks> 
           <NavLinks
             to="/dashboard/records"
             icon={<BsRecord />}
             label="Records"
-          />
-          {/* Dropdown for Settings */}
+          >Records</NavLinks>          {/* Dropdown for Settings */}
           <div className="dropdown-wrapper">
             <div
               className="dropdown-header"
@@ -39,7 +38,7 @@ const Sidebar = ({ onLogout }) => {
               <span>
                 {showSettingsDropdown ? <FiSettings /> : <MdSettingsEthernet />}
               </span>
-              <span>Settings</span>
+              <span><FiSettings />Settings</span>
             </div>
             {showSettingsDropdown && (
               <div className="dropdown-content">
@@ -67,12 +66,8 @@ const Sidebar = ({ onLogout }) => {
           </div>
         </div>
       </div>
-      <div onClick={handleLogout}>
-        {" "}
-        {/* Attach onClick event handler */}
-        <h3>
-          <IoIosLogOut />
-        </h3>
+      <div onClick={handleLogout}> {/* Attach onClick event handler */}
+        <h3><IoIosLogOut /></h3>
       </div>
     </div>
   );
