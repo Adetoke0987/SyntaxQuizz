@@ -1,0 +1,129 @@
+.allQuiz{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.quizBox{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(29, 187, 66);
+    border: 2px white solid;
+    gap: 20px;
+    align-items: center;
+    border-top-left-radius:20px ;
+    border-top-right-radius:20px ;
+    cursor: pointer;
+
+}
+
+.pop{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    z-index: 9;
+   
+  }
+  .pop__close{
+    border: none;
+    color: black;
+    background-color: rgb(224, 224, 224);
+    border: none;
+  }
+  .pop__close:hover{
+    background-color: rgb(195, 190, 190);
+    
+  }
+  .popButtons{
+    display: flex;
+    background-color: rgb(224, 224, 224);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 10;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 25%;
+  }
+
+  #title{
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 50%;
+    color: white;
+    cursor: pointer;
+
+  }
+.categories-body{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    z-index: 10;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+   
+    
+}
+
+.allButtons{
+  
+    display: flex;
+    flex-direction: column;
+}
+
+.cartoon{
+    background-color: rgb(91, 27, 91);
+}
+.geography{
+    background-color: rgb(37, 169, 192);
+}
+
+.music{
+    background-color: rgb(253, 54, 87);
+}
+
+.science{
+    background-color: rgb(238, 75, 16);
+}
+#btn{
+    width: 200px;
+    background-color: rgb(48, 58, 58);
+    color: white;
+    border-radius: 5px;
+    height: 10px;
+    font-size: 15px;
+    
+}
+#btn:hover{
+    background-color: rgb(123, 123, 123);
+    color: black;
+}
+#p{
+    color: white;
+    margin-left: 40%;
+    font-size: 17px;
+}
+#p:hover{
+    color: rgb(13, 13, 13);
+
+}
+
+
+

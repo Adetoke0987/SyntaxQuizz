@@ -6,8 +6,11 @@ const Geography = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ setClickedAnswers] = useState([]);
 
+  const diff = "hard"
+
+
   useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple")
+    fetch(`https://opentdb.com/api.php?amount=20&difficulty=medium&category=21`)
       .then(response => {
         if (!response.ok) {
           throw new Error("Failed to fetch data");
