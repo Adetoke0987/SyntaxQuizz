@@ -13,6 +13,7 @@ import NotificationSettings from "./pages/dashboard/settings/NotificationSetting
 import QuizSettings from "./pages/dashboard/settings/QuizSetting";
 import Quiz from "./pages/quiz/Quiz";
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
+import Record from "./pages/dashboard/record/Record";
 
 
 const router = createBrowserRouter ([
@@ -79,12 +80,18 @@ const router = createBrowserRouter ([
                             }
                         ]
                     },
+
                     {
                         path: '/dashboard/quiz',
                         element : <Quiz/>
-                    }
+                    },
+
                 ]
-            }
+            },
+            {
+                path: "/dashboard/records",
+                element: <Record/>
+            },
 
         ]
     }
