@@ -1,14 +1,15 @@
 /* side-wrapper */
 #side-wrapper {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly; /* Distribute content evenly vertically */
     flex-direction: column;
     background-color: rgba(255, 255, 200, 0.747); /* Semi-transparent light yellow */
     color: black;
     align-items: center;
     width: 13vw;
     height: 80vh;
-    padding: 15px;
+    padding: 15px; /* Add some padding for spacing */
+    /* Add a transition for smooth hover effects (optional) */
     transition: all 0.2s ease-in-out;
   }
   
@@ -53,6 +54,7 @@
     align-items: center; /* Align header content vertically */
     cursor: pointer; /* Indicate clickable behavior for the dropdown */
     padding: 5px 10px; /* Add some padding for the header */
+    /* Add a hover effect for the dropdown header (optional) */
     transition: all 0.2s ease-in-out;
   }
   
@@ -72,25 +74,6 @@
   
   /* Show the dropdown content when the showSettingsDropdown state is true */
   .dropdown-content.show {
-    display: block;
-  }
-  
-  /* New styles for collapse functionality */
-  #side-wrapper.collapsed {
-    width: 50px; /* Adjust width for collapsed state */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  #side-wrapper.collapsed #gold,
-  #side-wrapper.collapsed #links,
-  #side-wrapper.collapsed .dropdown-wrapper,
-  #side-wrapper.collapsed .dropdown-header span:nth-child(2) {
-    /* Hide content in collapsed state */
-    display: none;
-  }
-  
-  #side-wrapper.collapsed .dropdown-header span:nth-child(1) {
-    /* Show only the icon in collapsed state */
     display: block;
   }
   
