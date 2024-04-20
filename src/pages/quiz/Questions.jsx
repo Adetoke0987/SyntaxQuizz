@@ -86,7 +86,7 @@ const Questions = () => {
     <div id="main">
       <div className= "quizz">
         <h2>Category</h2>
-        <h3 className= 'users'>{post.question}</h3>
+        <h3 className= 'quest'>{post.question}</h3>
         <div id="answers">
           {shuffledAnswers.map((answer, index) => (
             <span id="ans"key={index} onClick={handleAnswerClick}>{answer}</span>
