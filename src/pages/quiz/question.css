@@ -42,7 +42,7 @@ h3, p {
 
 #ans{
     background-color:#222A2C;
-    color: black;
+    color: rgb(255, 255, 255);
     border-radius: 30px;
     padding: 10px 20px;
     border: 5px solid #fefffb;
