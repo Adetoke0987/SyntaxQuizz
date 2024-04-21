@@ -11,14 +11,15 @@ const Navbar = () => {
     const [isOpen, setIsOpen]= useState(true);
 
     const toggleMenu = ()=>{
-      setIsOpen(!isOpen);
+      const data = !isOpen
+      setIsOpen(data);
     };
 
 
   return (
     <nav className="navbar-container">
-      <div onclick={toggleMenu}>
-        {isOpen ? <IoMdClose/> : <FcMenu/> }
+      <div onClick={toggleMenu}>
+        {!isOpen ? <IoMdClose/> : <FcMenu/> }
         </div>
         {isOpen && (
          <div className="links-container">
