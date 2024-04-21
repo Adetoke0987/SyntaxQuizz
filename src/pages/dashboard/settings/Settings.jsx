@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './css/settings.css'
 
-const GeneralSettings = () => {
+const Settings = () => {
   // State variables for user settings
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -26,6 +26,7 @@ const GeneralSettings = () => {
     <div className="general-settings">
       <h2>General Settings</h2>
       <form onSubmit={handleSubmit}>
+        <input type="file"/>
         <label htmlFor="fullName">Full Name:</label>
         <input
           type="text"
@@ -67,4 +68,4 @@ const GeneralSettings = () => {
   );
 };
 
-export default GeneralSettings;
+export default Settings;

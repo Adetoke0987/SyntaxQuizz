@@ -3,6 +3,7 @@ import Inputs from './Inputs';
 // import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
 import { userData } from './UserContext';
 import { Link } from 'react-router-dom/dist';
+import style from './login.module.css'
 
 const LoginComponent = () => {
   const{users} = useContext(userData)
@@ -29,10 +30,10 @@ const LoginComponent = () => {
   ]
 
   return (
-    <div>
-    
-      <h2>Login</h2>
-
+    <div className={style.main}>
+    <div className={style.img}>
+    <img src="../../../src/assets/question.jpg" alt="" />
+  </div>
         <form onSubmit={null}>
          {
               logInInputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
@@ -45,14 +46,17 @@ const LoginComponent = () => {
                 
               })
             }
+      <div className={style.formSubmit}>
+
         <Link to={"/dashboard"}>
           <button>Log in</button>
         </Link>
-
+        </div>
         <div>
             <p>Dont have an Account?</p>
             <Link to={'/signup'}>Register</Link>
         </div>
+        
       </form>
 
 

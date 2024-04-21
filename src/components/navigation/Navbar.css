@@ -6,31 +6,15 @@
     align-items: center;
     background-color: white;
     color: black;
-    height: 10vh;
+    height: 9vh;
     align-items: center;
     padding: 0 2em 0 2em;
   }
   
   .logo-container {
-    flex: 1; 
-  }
-  input{
     display: flex;
-    align-items: center;
-    width: 12vw;
-    height: 3vh;
-    border-radius: 2em;
-    border: 0.1px solid black;
-    padding-left: 1em;
-    background: rgb(233, 231, 231);
-    outline: none;
-
   }
 
- input:focus, input:active{
-    outline: 1px solid #0040ff;
-    border: none;
-  }
   .logo {
     width: 6em; 
     height: 4em;

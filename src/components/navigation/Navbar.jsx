@@ -1,42 +1,56 @@
 
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
+import {FcMenu} from 'react-icons/fc';
+import {IoShareOutline} from 'react-icons/io5';
+import {IoMdClose} from 'react-icons/io';
 
 const Navbar = () => {
+  
+    const [isOpen, setIsOpen]= useState(false);
+
+    const toggleMenu = ()=>{
+      setIsOpen(!isOpen);
+    };
+
+
   return (
     <nav className="navbar-container">
-      <div className="logo-container">
-        <Link to="/">
-          <img src="../../src/assets/syntax.png" alt="logo" className="logo" />
-        </Link>
-      </div>
-      <div className="search">
-        <input type="text" placeholder="search" />
-      </div>
-      <div className="links-container">
-        <Link to="/" className="nav-link">
+      <div onclick={toggleMenu}>
+        {isOpen ? <IoMdClose/> : <FcMenu/> }
+        </div>
+        {isOpen && (
+         <div className="links-container">
+          <NavLink to="/" className="nav-link">
           Home
-        </Link>
-        <Link to="/connect" className="nav-link">
-          Connect
-        </Link>
-        <Link to="/pricing" className="nav-link">
-          Pricing
-        </Link>
-        <Link to="/help" className="nav-link">
+        </NavLink>
+        <NavLink to="/help" className="nav-link">
           Help
-        </Link>
-        <Link to="/login" className="nav-link">
+        </NavLink>
+        <NavLink to="/login" className="nav-link">
           Login
-        </Link>
-        <Link to="/signup" className="nav-link">
+        </NavLink>
+        <NavLink to="/signup" className="nav-link">
           Sign up
-        </Link>
+        </NavLink>
         <i className="fa fa-search search-icon"></i>
-        <Link to="/signup" className="create-button">
+        <NavLink to="/signup" className="create-button">
           Create Quiz
-        </Link>
+        </NavLink> 
+        
+      </div>
+        
+        )}
+      
+        <div className="logo-container">
+        <NavLink to="/">
+          <img src="../../src/assets/syntax.png" alt="logo" className="logo" />
+        </NavLink>
+      </div>
+
+      <div>
+        <IoShareOutline/>
       </div>
     </nav>
   );

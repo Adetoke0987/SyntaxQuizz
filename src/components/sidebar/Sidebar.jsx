@@ -3,10 +3,10 @@ import NavLinks from "../navlinks/NavLinks";
 import "./sidebar.css";
 import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
-import { MdQuiz } from "react-icons/md";
-import { BsRecord } from "react-icons/bs";
+import { MdQuiz, MdOutlineDisplaySettings } from "react-icons/md";
+import { MdQuestionAnswer, MdEditNotifications  } from "react-icons/md";
 import { FiSettings } from "react-icons/fi"; // Using FiSettings for general settings icon
-import { MdSettingsEthernet } from "react-icons/md"; // Using MdSettingsEthernet for quiz game settings icon
+import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io"; // Using MdSettingsEthernet for quiz game settings icon
 
 const Sidebar = ({ onLogout }) => {
   // Logout function
@@ -27,7 +27,7 @@ const Sidebar = ({ onLogout }) => {
           <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz"  > Quiz</NavLinks> 
           <NavLinks
             to="/dashboard/records"
-            icon={<BsRecord />}
+            icon={<MdQuestionAnswer />}
             label="Records"
           >Records</NavLinks>          {/* Dropdown for Settings */}
           <div className="dropdown-wrapper">
@@ -36,29 +36,30 @@ const Sidebar = ({ onLogout }) => {
               onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
             >
               <span>
-                {showSettingsDropdown ? <FiSettings /> : <MdSettingsEthernet />}
+                {showSettingsDropdown ? <IoIosArrowDropright/> : <IoIosArrowDropdown/> }
               </span>
-              <span><FiSettings />Settings</span>
+              <span id="drp">Settings</span>
             </div>
             {showSettingsDropdown && (
               <div className="dropdown-content">
+                
                 <NavLinks
-                  to="/dashboard/settings/general"
+                  to="/dashboard/settings"
                   className="dropdown-links"
                 >
-                  General Settings
+                  <FiSettings />General Settings
                 </NavLinks>
                 <NavLinks
                   to="/dashboard/settings/notification"
                   className="dropdown-links"
                 >
-                  Notification Settings
+                 <MdEditNotifications/> Notification Settings
                 </NavLinks>
                 <NavLinks
                   to="/dashboard/settings/quizset"
                   className="dropdown-links"
                 >
-                  Quiz Settings
+                  <MdOutlineDisplaySettings/> Quiz Settings
                 </NavLinks>
                 {/* Add more settings links as needed */}
               </div>
@@ -66,7 +67,7 @@ const Sidebar = ({ onLogout }) => {
           </div>
         </div>
       </div>
-      <div onClick={handleLogout}> {/* Attach onClick event handler */}
+      <div id="out" onClick={handleLogout}> {/* Attach onClick event handler */}
         <h3><IoIosLogOut /></h3>
       </div>
     </div>

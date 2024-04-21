@@ -76,12 +76,11 @@ const RegistrationComponent = () => {
  
 
   return (
-    <div>
-    <div>
-    <img src="../components/loginComponents/RegistrationComponent" alt="" />
+    <div className={style.main}>
+    <div className={style.img}>
+    <img src="../../../src/assets/question.jpg" alt="" />
   </div>
       <form onSubmit={addUsers}>
-        <h1>Welcome to Syntax Quizzez</h1>
         <h2>Register Your Account</h2>
         {
           inputs.map(({labelText,inputType,inputName,placeholderText,inputValue})=>{
@@ -93,13 +92,11 @@ const RegistrationComponent = () => {
         }
       <div className={style.formSubmit}>
         <button>Submit</button>
-
-        <div className={style.loginOption}>
-          <p>Have an Account?</p>
-          <Link to='/login'> <h3>Login</h3> </Link>
-        </div>
       </div>
-
+        <div >
+          <p>Have an Account?</p>
+          <Link to='/login'> Login</Link>
+        </div>
 
       </form>
       

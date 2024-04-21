@@ -9,11 +9,12 @@ import Pricing from "./pages/Pricing";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
-import NotificationSettings from "./pages/dashboard/settings/NotificationSettings";
-import QuizSettings from "./pages/dashboard/settings/QuizSetting";
+import Sets from "./pages/dashboard/settings/Sets";
+import Records from "./pages/dashboard/records/Records";
+import NotificationSetting from "./pages/dashboard/settings/NotificationSettings";
+import QuizSetting from "./pages/dashboard/settings/QuizSetting";
 import Quiz from "./pages/quiz/Quiz";
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
-import Record from "./pages/dashboard/record/Record";
 
 
 const router = createBrowserRouter ([
@@ -64,34 +65,32 @@ const router = createBrowserRouter ([
                     }, 
                     {
                         path: '/dashboard/settings',
-                        element: <Settings/>,
+                        element: <Sets/>,
                         children:[
                             {
                                 index: true,
                                 element: <Settings/>
                             },
                             {
-                                path: './dashboard/settings/notification',
-                                element: <NotificationSettings/>
+                                path: '/dashboard/settings/notification',
+                                element: <NotificationSetting/>
                             },
                             {
-                                path: './dashboard/settings/quizset',
-                                element: <QuizSettings/>
+                                path: '/dashboard/settings/quizset',
+                                element: <QuizSetting/>
                             }
                         ]
                     },
-
                     {
                         path: '/dashboard/quiz',
                         element : <Quiz/>
                     },
-
+                    {
+                        path: '/dashboard/records',
+                        element: <Records/>
+                    }
                 ]
-            },
-            {
-                path: "/dashboard/records",
-                element: <Record/>
-            },
+            }
 
         ]
     }

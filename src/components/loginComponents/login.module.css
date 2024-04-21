@@ -1,3 +1,35 @@
+.main{
+    margin-left: 0;
+    width: 100vw;
+    height: 80vh;
+    background: rgba(70, 44, 44, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+}
+.img img{
+    height:70vh;
+    width: 30vw;
+}
+
+form{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center
+}
+
+
 .inputContainer{
     width: 300px;
     height: 100px;
@@ -17,10 +49,8 @@
 }
 .loginOption{
     display: flex;
-
-    gap: 20px;
-    width: 150px;
-    align-items: center;
+    flex-direction: column;
+    /* align-items: center; */
 }
 .formSubmit{
     display: flex;
