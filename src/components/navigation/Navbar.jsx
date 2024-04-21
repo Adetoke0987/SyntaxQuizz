@@ -8,7 +8,7 @@ import {IoMdClose} from 'react-icons/io';
 
 const Navbar = () => {
   
-    const [isOpen, setIsOpen]= useState(false);
+    const [isOpen, setIsOpen]= useState(true);
 
     const toggleMenu = ()=>{
       setIsOpen(!isOpen);
