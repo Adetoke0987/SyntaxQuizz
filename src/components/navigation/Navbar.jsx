@@ -8,7 +8,7 @@ import {IoMdClose} from 'react-icons/io';
 
 const Navbar = () => {
   
-    const [isOpen, setIsOpen]= useState(true);
+    const [isOpen, setIsOpen]= useState(false);
 
     const toggleMenu = ()=>{
       const data = !isOpen
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container">
       <div onClick={toggleMenu}>
-        {!isOpen ? <IoMdClose/> : <FcMenu/> }
+        {isOpen ? <IoMdClose/> : <FcMenu/> }
         </div>
         {isOpen && (
          <div className="links-container">
