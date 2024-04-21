@@ -7,7 +7,7 @@ const Home = () => {
       <div className="home-container">
         <h6>CREATE A FREE</h6>
         <h1>
-          {" "}
+          {""}
           QUIZ <span style={{ color: "#f8c35c" }}>NOW</span>{" "}
         </h1>
         <p>

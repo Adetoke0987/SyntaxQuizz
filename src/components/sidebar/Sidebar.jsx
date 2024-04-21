@@ -17,7 +17,12 @@ const Sidebar = ({ onLogout }) => {
   };
 
   // State for managing dropdown menu
-  const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState(true);
+
+  const change = ()=>{
+    const changed = !showSettingsDropdown
+    setShowSettingsDropdown(changed)
+  }
 
   return (
     <div id="side-wrapper">
