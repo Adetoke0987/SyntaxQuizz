@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useColorMode } from '../../context/ColorModeContext';
+// import { useColorMode } from '../../context/ColorModeContext';
 import './css/settings.css'
 
 const Settings = () => {

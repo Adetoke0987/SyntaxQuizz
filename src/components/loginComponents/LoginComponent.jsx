@@ -29,7 +29,7 @@ const LoginComponent = () => {
   return (
     <div className={style.main}>
       <div className={style.img}>
-        {/* <img src="" alt="" /> */}
+        {/*  <img src="" alt="" /> */}
       </div>
       <form onSubmit={null}>
         {logInInputs.map(
