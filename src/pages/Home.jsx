@@ -10,7 +10,7 @@ const Home = () => {
           {""}
           QUIZ <span style={{ color: "#f8c35c" }}>NOW</span>{" "}
         </h1>
-        <p>
+        <p id="paragraph1">
           The versatile data collection tool for professionals. Typeform makes
           asking easy and answering refreshing
         </p>
