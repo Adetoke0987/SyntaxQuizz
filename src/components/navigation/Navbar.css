@@ -4,13 +4,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    /* background-color:whitesmoke; */
     color: black;
     height: 9vh;
     align-items: center;
     padding: 0 2em 0 2em;
   }
+  /* .text{
+    background-color: darkblue;
+  } */
+  .text2{
+    display: flex;
+    align-items: center;
   
+  }
   .logo-container {
     display: flex;
   }
