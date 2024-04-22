@@ -69,12 +69,6 @@ button:hover {
   flex-wrap: wrap;
 }
 
-.profile-card-container {
-  display: flex; /* Arrange profile cards horizontally */
-  justify-content: space-around; /* Distribute cards evenly */
-  flex-wrap: wrap; /* Allow cards to wrap to next line if needed */
-}
-
 .profilecard {
   background-color: #fff;
   border-radius: 5px;
@@ -84,3 +78,11 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 300px; 
 }
+
+.profilecard img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
