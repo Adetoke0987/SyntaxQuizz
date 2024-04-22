@@ -5,6 +5,7 @@ const Inputs = ({labelText, inputType,placeholderText, inputName, inputValue,inp
   return (
     <div className={style.inputContainer}>
         <label>{labelText}</label>
+     
         <input type={inputType} placeholder={placeholderText} name={inputName} value={inputValue} onChange={inputfunc} />
     </div>
   )

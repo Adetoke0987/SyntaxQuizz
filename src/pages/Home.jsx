@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -14,7 +15,11 @@ const Home = () => {
           The versatile data collection tool for professionals. Typeform makes
           asking easy and answering refreshing
         </p>
-        <button type="button">Let's do it</button>
+        <div>
+          <Link to={"/login"}><button type="button">Let's do it</button></Link>
+        </div>
+        
+        
       </div>
       <div className="teams">
         <h2>Meet the Team</h2>
