@@ -5,6 +5,7 @@ import "./Navbar.css";
 import {FcMenu} from 'react-icons/fc';
 import {IoShareOutline} from 'react-icons/io5';
 import {IoMdClose} from 'react-icons/io';
+import syntax from '../../../src/assets/syntax.png'
 
 const Navbar = () => {
   
@@ -46,7 +47,7 @@ const Navbar = () => {
       
         <div className="logo-container">
         <NavLink to="/">
-          <img src="../../src/assets/syntax.png" alt="logo" className="logo" />
+          <img src={syntax} alt="logo" className="logo" />
         </NavLink>
       </div>
 
