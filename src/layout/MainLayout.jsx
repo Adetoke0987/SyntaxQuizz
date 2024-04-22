@@ -6,7 +6,6 @@ const MainLayout = () => {
   const layoutStyle = {
     display: 'flex',
     flexDirection: 'column',
-    minHeight: '100vh', 
   };
 
   const contentStyle = {
