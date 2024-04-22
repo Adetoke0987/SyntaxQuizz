@@ -5,7 +5,7 @@ import "./Navbar.css";
 import {FcMenu} from 'react-icons/fc';
 import {IoShareOutline} from 'react-icons/io5';
 import {IoMdClose} from 'react-icons/io';
-import syntax from '../scr/assets/syntax.png'
+import syntax from '../../../src/assets/syntax.png'
 
 const Navbar = () => {
   
