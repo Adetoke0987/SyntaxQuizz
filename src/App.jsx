@@ -1,16 +1,16 @@
 import { RouterProvider } from "react-router-dom";
 import router from "./router";
-import {ThemeProvider} from './context/ThemeContext'
+import { ColorModeProvider } from './context/ColorModeContext';
 import UserContext from "./components/loginComponents/UserContext";
 
 function App() {
   return (
     <>
-      <ThemeProvider>
+      <ColorModeProvider>
         <UserContext>
           <RouterProvider router={router} />
         </UserContext>
-      </ThemeProvider>
+      </ColorModeProvider>
     </>
   );
 }

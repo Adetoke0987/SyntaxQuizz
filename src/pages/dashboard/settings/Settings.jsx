@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
+import { useColorMode } from '../../context/ColorModeContext';
 import './css/settings.css'
 
 const Settings = () => {
+
+
+  const { isDarkMode, toggleColorMode, theme } = useColorMode();
+
   // State variables for user settings
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -23,7 +28,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="general-settings">
+    <div className="general-settings"  style={theme}>
       <h2>General Settings</h2>
       <form onSubmit={handleSubmit}>
         <input type="file"/>
@@ -63,6 +68,12 @@ const Settings = () => {
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <button type="submit">Update Settings</button>
+
+
+        <button onClick={event => { { toggleColorMode; } }}>
+          {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
+        
       </form>
     </div>
   );
