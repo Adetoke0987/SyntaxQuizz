@@ -65,7 +65,7 @@ const RegistrationComponent = () => {
         {/* <img src="../../../src/assets/question.jpg" alt="" /> */}
       </div>
       <form onSubmit={addUsers}>
-        <h2>Register Your Account</h2>
+        <h2 className={style.h2}>Register Your Account</h2>
         {inputs.map(
           ({
             labelText,
@@ -88,12 +88,12 @@ const RegistrationComponent = () => {
           }
         )}
         <div className={style.formSubmit}>
-          <button>Submit</button>
+          <button className={style.button}>Submit</button>
         </div>
         <div className={style.not}>
           <p className={style.p}>Have an Account?</p>
 
-          <Link to="/login"> Login</Link>
+          <Link to="/login" className={style.h2}> Login</Link>
         </div>
       </form>
     </div>

@@ -16,10 +16,10 @@ const Home = () => {
           asking easy and answering refreshing
         </p>
         <div>
-          <Link to={"/login"}><button type="button">Let's do it</button></Link>
+          <Link to={"/login"}>
+            <button type="button">Let's do it</button>
+          </Link>
         </div>
-        
-        
       </div>
       <div className="teams">
         <h2>Meet the Team</h2>

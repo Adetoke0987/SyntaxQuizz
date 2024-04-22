@@ -4,7 +4,7 @@ import "./sidebar.css";
 import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { MdQuiz, MdOutlineDisplaySettings } from "react-icons/md";
-import { MdQuestionAnswer, MdEditNotifications  } from "react-icons/md";
+import { MdQuestionAnswer, MdEditNotifications } from "react-icons/md";
 import { FiSettings } from "react-icons/fi"; // Using FiSettings for general settings icon
 import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io"; // Using MdSettingsEthernet for quiz game settings icon
 
@@ -17,54 +17,64 @@ const Sidebar = ({ onLogout }) => {
   };
 
   // State for managing dropdown menu
-  const [showSettingsDropdown, setShowSettingsDropdown] = useState(true);
+  const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
-  const change = ()=>{
-    const changed = !showSettingsDropdown
-    setShowSettingsDropdown(changed)
-  }
+  const change = () => {
+    const changed = !showSettingsDropdown;
+    setShowSettingsDropdown(changed);
+  };
 
   return (
     <div id="side-wrapper">
       <div id="gold">
         <div id="links">
-          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile" > User Profile</NavLinks> 
-          <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz"  > Quiz</NavLinks> 
+          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile">
+            {" "}
+            User Profile
+          </NavLinks>
+          <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz">
+            {" "}
+            Quiz
+          </NavLinks>
           <NavLinks
             to="/dashboard/records"
             icon={<MdQuestionAnswer />}
             label="Records"
-          >Records</NavLinks>          {/* Dropdown for Settings */}
+          >
+            Records
+          </NavLinks>{" "}
+          {/* Dropdown for Settings */}
           <div className="dropdown-wrapper">
             <div
               className="dropdown-header"
-              onClick={() => setShowSettingsDropdown(!showSettingsDropdown)}
+              onClick={change}
             >
               <span>
-                {showSettingsDropdown ? <IoIosArrowDropright/> : <IoIosArrowDropdown/> }
+                {showSettingsDropdown ? (
+                  <IoIosArrowDropdown />
+                ) : (
+                  <IoIosArrowDropright />
+                )}
               </span>
               <span id="drp">Settings</span>
             </div>
             {showSettingsDropdown && (
               <div className="dropdown-content">
-                
-                <NavLinks
-                  to="/dashboard/settings"
-                  className="dropdown-links"
-                >
-                  <FiSettings />General Settings
+                <NavLinks to="/dashboard/settings" className="dropdown-links">
+                  <FiSettings />
+                  General Settings
                 </NavLinks>
                 <NavLinks
                   to="/dashboard/settings/notification"
                   className="dropdown-links"
                 >
-                 <MdEditNotifications/> Notification Settings
+                  <MdEditNotifications /> Notification Settings
                 </NavLinks>
                 <NavLinks
                   to="/dashboard/settings/quizset"
                   className="dropdown-links"
                 >
-                  <MdOutlineDisplaySettings/> Quiz Settings
+                  <MdOutlineDisplaySettings /> Quiz Settings
                 </NavLinks>
                 {/* Add more settings links as needed */}
               </div>
@@ -72,8 +82,12 @@ const Sidebar = ({ onLogout }) => {
           </div>
         </div>
       </div>
-      <div id="out" onClick={handleLogout}> {/* Attach onClick event handler */}
-        <h3><IoIosLogOut /></h3>
+      <div id="out" onClick={handleLogout}>
+        {" "}
+        {/* Attach onClick event handler */}
+        <h3>
+          <IoIosLogOut />
+        </h3>
       </div>
     </div>
   );

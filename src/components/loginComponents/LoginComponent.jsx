@@ -54,12 +54,12 @@ const LoginComponent = () => {
         )}
         <div className={style.formSubmit}>
           <Link to={"/dashboard"}>
-            <button>Log in</button>
+            <button className={style.button}>Log in</button>
           </Link>
         </div>
         <div className={style.not}>
           <p className={style.p}>Dont have an Account?</p>
-          <Link to={"/signup"}>Register</Link>
+          <Link to={"/signup"} className={style.h2}>Register</Link>
         </div>
       </form>
     </div>
