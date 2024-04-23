@@ -120,5 +120,11 @@ button:hover {
   width: 100%;
   justify-content: center;
   align-items: center;
+  
+}
+
+
+.footer p{
+  color: black;
 }
 
