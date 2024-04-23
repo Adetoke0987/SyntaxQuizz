@@ -1,11 +1,11 @@
 import React from 'react';
 import Navbar from '../components/navigation/Navbar';
-import { useColorMode } from '../context/ColorModeContext';
+// import { useColorMode } from '../context/ColorModeContext';
 import { Outlet } from 'react-router-dom';
 
 const MainLayout = () => {
 
-  const { theme } = useColorMode();
+  // const { theme } = useColorMode();
 
   const contentStyle = {
     flex: 1, 
@@ -13,7 +13,7 @@ const MainLayout = () => {
   };
 
   return (
-    <div style={theme}>
+    <div>
       <Navbar />
       <div style={contentStyle}>
         <Outlet />
