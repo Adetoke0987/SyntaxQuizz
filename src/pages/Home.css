@@ -1,4 +1,7 @@
-
+*{
+  margin: 0;
+  padding: 0;
+}
 
 .home-container {
   display: flex; /* Allow stacking sections horizontally */
@@ -55,18 +58,27 @@ button:hover {
 }
 
 .teams {
-  text-align: center;
+  text-align: center;  
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .teams h2 {
   font-size: 24px;
   font-weight: bold;
   margin: 0;
+  height: 20vh;
   /* margin-bottom: 20px; */
 }
 .grid{
   display:flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .profilecard {
@@ -84,7 +96,17 @@ button:hover {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  margin-bottom: 10px;
   border: 1px solid;
+} 
+.profilecard h2 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.profilecard p {
+  margin: 0;
+  padding: 0;
+  color: black;
 }
 

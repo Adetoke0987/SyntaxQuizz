@@ -26,7 +26,7 @@ const Home = () => {
         <h2>Meet the Team</h2>
         <div className="grid">
           <div className="profilecard">
-            <img src="https://www.google.com/imgres?q=adedokun%20peter%20akintomiwa&imgurl=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FF4oYHaeXMAAVYsV%3Fformat%3Djpg%26name%3Dlarge&imgrefurl=https%3A%2F%2Ftwitter.com%2Fherkintormiwer&docid=neL-p75rF5XLuM&tbnid=u_ep0lkfUiQYHM&vet=12ahUKEwjZyoC8mtaFAxU6WUEAHeCEBtsQM3oECBAQAA..i&w=960&h=1280&hcb=2&itg=1&ved=2ahUKEwjZyoC8mtaFAxU6WUEAHeCEBtsQM3oECBAQAA" alt="Person 1 Profile Picture" />
+            <img src="../../src/assets/Akintomiwa.jpg" alt="Person 1 Profile Picture" />
             <h2>Adedokun Peter Akintomiwa</h2>
             <p>Software Engineer</p>
             <a href="https://akintomiwa-portfolio.vercel.app"><IoIosArrowForward /></a>

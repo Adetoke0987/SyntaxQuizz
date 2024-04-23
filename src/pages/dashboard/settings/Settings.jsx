@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useColorMode } from '../../context/ColorModeContext';
+// import { useColorMode } from '../../../context/ColorModeContext';
 import './css/settings.css'
 
 const Settings = () => {
@@ -28,7 +28,7 @@ const Settings = () => {
   };
 
   return (
-    <div className="general-settings"  style={theme}>
+    <div className="general-settings" >
       <h2>General Settings</h2>
       <form onSubmit={handleSubmit}>
         <input type="file"/>
@@ -70,9 +70,9 @@ const Settings = () => {
         <button type="submit">Update Settings</button>
 
 
-        <button onClick={event => { { toggleColorMode; } }}>
+        {/* <button onClick={event => { { toggleColorMode; } }}>
           {isDarkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-        </button>
+        </button> */}
         
       </form>
     </div>
