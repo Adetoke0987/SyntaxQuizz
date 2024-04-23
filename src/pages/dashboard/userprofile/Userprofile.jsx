@@ -1,5 +1,5 @@
-import React from 'react';
-import './userprofile.css'
+import React from "react";
+import "./userprofile.css";
 
 const UserProfile = ({ user }) => {
   // Check if user is defined before accessing properties
@@ -13,11 +13,15 @@ const UserProfile = ({ user }) => {
     <div className="user-profile">
       {/* Display user image if available */}
       {imageUrl && (
-        <img src={imageUrl} alt={`${fullname}'s profile picture`} className="profile-image" />
+        <img
+          src={imageUrl}
+          alt={`${fullname}'s profile picture`}
+          className="profile-image"
+        />
       )}
       <div className="profile-details">
-        <h2>{fullname || 'Unknown'}</h2>
-        <p>Email: {email || 'Unknown'}</p>
+        <h2>{fullname || "Unknown"}</h2>
+        <p>Email: {email || "Unknown"}</p>
       </div>
       {quizStats && (
         <div className="quiz-stats">
