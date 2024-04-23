@@ -69,6 +69,10 @@ const Home = () => {
           </div>
         </div>
       </div>
+
+      <div className="footer">
+        <p>Copyright © 2024. All rights reserved.<syntax/></p>
+      </div>
     </div>
   );
 };
