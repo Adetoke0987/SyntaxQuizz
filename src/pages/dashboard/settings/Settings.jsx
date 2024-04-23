@@ -5,7 +5,7 @@ import './css/settings.css'
 const Settings = () => {
 
 
-  const { isDarkMode, toggleColorMode, theme } = useColorMode();
+  // const { isDarkMode, toggleColorMode, theme } = useColorMode();
 
   // State variables for user settings
   const [fullName, setFullName] = useState('');
