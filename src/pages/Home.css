@@ -4,13 +4,15 @@
 }
 
 .home-container {
+
   display: flex; /* Allow stacking sections horizontally */
   justify-content: center; /* Center content horizontally */
   align-items: center; /* Center content vertically */
   padding: 50px;
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   flex-direction: column;
   height: 70vh;
+  color: rgb(245, 160, 3);
 }
 
 .hero-content {

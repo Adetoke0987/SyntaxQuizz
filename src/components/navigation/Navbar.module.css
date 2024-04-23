@@ -1,0 +1,162 @@
+<<<<<<< Updated upstream:src/components/navigation/Navbar.css
+
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color:whitesmoke; */
+    color: black;
+    height: 9vh;
+    align-items: center;
+    padding: 0 2em 0 2em;
+  }
+  /* .text{
+    background-color: darkblue;
+  } */
+  .text2{
+    display: flex;
+    align-items: center;
+  
+  }
+  .logo-container {
+    display: flex;
+  }
+
+  .logo {
+    width: 6em; 
+    height: 4em;
+  }
+  
+  .links-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+ 
+  }
+
+  
+  .create-button {
+    background-color: #0040ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+
+  }
+ 
+
+
+  @media only screen and (max-width: 440px) {
+    /* .text2{
+      display: block;
+    } */
+    /* .links-container{
+      display: block;
+    } */
+  }
+  
+=======
+
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color:whitesmoke; */
+    color: #f8efef;
+    height: 9vh;
+    align-items: center;
+    padding: 0 2em 0 2em;
+  }
+  .hamburger{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .text2{
+    display: flex;
+    align-items: center;
+  
+  }
+  .logocontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+
+    /* background-color:orange; */
+  }
+
+  .logo {
+    width: 6em; 
+    height: 4em;
+  }
+  
+  .linkscontainer {
+    display: flex;
+    align-items: center;
+    width: 22vw;
+
+  }
+  
+  .navlink {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+  }
+  
+  .navlink:hover {
+    text-decoration: underline;
+ 
+  }
+
+  
+  .createbutton {
+    background-color: rgb(245, 160, 3);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+  }
+  
+  .createbutton:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+
+  }
+  .active{
+    /* background: rgb(245, 160, 3); */
+
+    /* border-top: none;
+    border-left: none;
+    border-right: none; */
+    border-bottom: 4px solid rgb(245, 160, 3);
+}
+ 
+  
+>>>>>>> Stashed changes:src/components/navigation/Navbar.module.css

@@ -1,11 +1,11 @@
 
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbar.css";
+import style from "./Navbar.module.css";
 import { FcMenu } from 'react-icons/fc';
 import { IoShareOutline } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
-import syntax from '../../../src/assets/syntax.png'
+import syntax from '../../../src/assets/SyntaxLogo.png'
 
 const Navbar = () => {
 
@@ -18,27 +18,27 @@ const Navbar = () => {
 
 
   return (
-    <nav className="navbar-container">
-      <div className="text2">
-        <div onClick={toggleMenu} className="text">
-          {isOpen ? <IoMdClose /> : <FcMenu />}
+    <nav className={style.navbarContainer}>
+      <div className={style.text2}>
+        <div onClick={toggleMenu} >
+          {isOpen ? <IoMdClose  /> : <span className={style.hamburger}>≡</span>}
         </div>
         {isOpen && (
-          <div className="links-container">
-            <NavLink to="/" className="nav-link">
+          <div className={style.linkscontainer}>
+            <NavLink to="/" className={style.navlink}>
               Home
             </NavLink>
-            <NavLink to="/help" className="nav-link">
+            <NavLink to="/help" className={style.navlink}>
               Help
             </NavLink>
-            <NavLink to="/login" className="nav-link">
+            <NavLink to="/login" className={style.navlink}>
               Login
             </NavLink>
-            <NavLink to="/signup" className="nav-link">
+            <NavLink to="/signup" className={style.navlink}>
               Sign up
             </NavLink>
             <i className="fa fa-search search-icon"></i>
-            <NavLink to="/signup" className="create-button">
+            <NavLink to="/signup" className={style.createbutton}>
               Create Quiz
             </NavLink>
 
@@ -48,15 +48,12 @@ const Navbar = () => {
       </div>
 
 
-      <div className="logo-container">
+      <div className={style.logocontainer}>
         {/* <NavLink to="/"> */}
-          <img src={syntax} alt="logo" className="logo" />
+          <img src={syntax} alt="logo" className={style.logo}/>
         {/* </NavLink> */}
       </div>
 
-      <div>
-        <IoShareOutline />
-      </div>
     </nav>
   );
 };

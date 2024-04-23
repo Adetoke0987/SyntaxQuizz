@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
-import Profile from "../components/Profile";
+// import Profile from "../components/Profile";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
         <h6>CREATE A FREE</h6>
         <h1>
           {""}
-          QUIZ <span style={{ color: "#f8c35c" }}>NOW</span>{" "}
+          QUIZ <span style={{ color: "rgb(245, 160, 3)" }}>NOW</span>{" "}
         </h1>
         <p id="paragraph1">
           The versatile data collection tool for professionals. Typeform makes
@@ -23,8 +23,12 @@ const Home = () => {
           </Link>
         </div>
       </div>
+<<<<<<< Updated upstream
 
 
+=======
+      
+>>>>>>> Stashed changes
       <div className="footer">
         <p>
           Copyright © 2024. All rights reserved.

@@ -7,3 +7,9 @@
   --background: #fff;
 
 }
+body{
+  background-image: url(../../../src/assets/HomeBackground.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}

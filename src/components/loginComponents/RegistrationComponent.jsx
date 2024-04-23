@@ -61,9 +61,6 @@ const RegistrationComponent = () => {
 
   return (
     <div className={style.main}>
-      <div className={style.img}>
-        {/* <img src="../../../src/assets/question.jpg" alt="" /> */}
-      </div>
       <form onSubmit={addUsers}>
         <h2 className={style.h2}>Register Your Account</h2>
         {inputs.map(

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import NavLinks from "../navlinks/NavLinks";
 import { Link } from "react-router-dom";
-import "./sidebar.css";
+import style from "./sidebar.module.css";
 import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { MdQuiz, MdOutlineDisplaySettings } from "react-icons/md";
@@ -26,7 +26,7 @@ const Sidebar = ({ onLogout }) => {
   };
 
   return (
-    <div id="side-wrapper">
+    <div id={style.side-wrapper}>
       <div id="gold">
         <div id="links">
           <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile">

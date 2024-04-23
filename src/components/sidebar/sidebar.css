@@ -36,6 +36,10 @@
 }
 
 .active{
-    background: #428bca;
-    border-radius: 1em;
+    /* background: rgb(245, 160, 3); */
+
+    /* border-top: none;
+    border-left: none;
+    border-right: none; */
+    border-bottom: 4px solid rgb(245, 160, 3);
 }
