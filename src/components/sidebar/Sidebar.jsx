@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavLinks from "../navlinks/NavLinks";
+import { Link } from "react-router-dom";
 import "./sidebar.css";
 import { IoIosLogOut } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -83,11 +84,13 @@ const Sidebar = ({ onLogout }) => {
         </div>
       </div>
       <div id="out" onClick={handleLogout}>
-        {" "}
-        {/* Attach onClick event handler */}
-        <h3>
-          <IoIosLogOut />
-        </h3>
+       
+      <Link to="../../../pages/dashboard/logout/logout.jsx"> 
+          <h3>
+            <IoIosLogOut />
+          </h3>
+        </Link> 
+       
       </div>
     </div>
   );
