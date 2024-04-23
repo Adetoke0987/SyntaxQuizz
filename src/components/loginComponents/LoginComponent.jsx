@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Inputs from "./Inputs";
 // import Dashboard from '../../pages/dashboard/Dashboard'; // Import Dashboard component
 import { userData } from "./UserContext";
@@ -9,6 +9,35 @@ const LoginComponent = () => {
   const { users } = useContext(userData);
 
   const { fullname, password } = users;
+  //The Context that will be available on all pages is the users which contains the user detils
+
+  const [userDetails, setUserDetails] = useState({
+    fullname: "",
+    email: "",
+    password: "",
+  });
+
+  //A function to handle the changes observed on the input feilds
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setUserDetails({
+      ...userDetails,
+      [name]: value,
+    });
+  };
+
+  const addUsers = (e) => {
+    e.preventDefault();
+    updateUser([...users, userDetails]);
+    setUserDetails({
+      fullname: "",
+      email: "",
+      password: "",
+    });
+
+    console.log(users);
+  };
+
   const logInInputs = [
     {
       labelText: "Full Name Or Email",
