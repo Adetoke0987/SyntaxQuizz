@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
+import akintomiwa from "../../src/assets/Akintomiwa.jpg"
 
 const Home = () => {
   return (
@@ -26,7 +27,7 @@ const Home = () => {
         <h2>Meet the Team</h2>
         <div className="grid">
           <div className="profilecard">
-            <img src="../../src/assets/Akintomiwa.jpg" alt="Person 1 Profile Picture" />
+            <img src={akintomiwa} alt="Person 1 Profile Picture" />
             <h2>Adedokun Peter Akintomiwa</h2>
             <p>Software Engineer</p>
             <a href="https://akintomiwa-portfolio.vercel.app"><IoIosArrowForward /></a>
