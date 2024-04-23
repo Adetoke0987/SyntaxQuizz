@@ -88,7 +88,8 @@ const RegistrationComponent = () => {
           }
         )}
         <div className={style.formSubmit}>
-          <button className={style.button}>Submit</button>
+          <Link to="/login"> <button className={style.button}>Submit</button></Link>
+         
         </div>
         <div className={style.not}>
           <p className={style.p}>Have an Account?</p>
