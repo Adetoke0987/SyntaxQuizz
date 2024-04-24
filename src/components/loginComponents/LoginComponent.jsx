@@ -40,9 +40,9 @@ const LoginComponent = () => {
 
   const logInInputs = [
     {
-      labelText: "Full Name Or Email",
-      inputType: "text",
-      placeholderText: "Enter Your Name",
+      labelText: "Email",
+      inputType: "email",
+      placeholderText: "Enter Your Email",
       inputName: "fullname",
       inputValue: fullname,
     },

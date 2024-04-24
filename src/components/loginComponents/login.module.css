@@ -13,8 +13,8 @@
     overflow: hidden;
 }
 .registerform{
-     width:20%;
-     height: 40rem;
+    width:25em;
+    height: 30rem;
     display: flex;
     padding: 1vw;
     border-radius: 2vw;
@@ -22,16 +22,22 @@
     justify-content: right;
     background-color: rgba(247, 245, 245, 0.313);
 }
+.registerform:hover{
+    border: 2px solid white;
+}
 
 .loginform{
-    width:20%;
-    height: 30rem;
+    width:25em;
+    height: 25rem;
     display: flex;
     padding: 1.6vw;
     border-radius: 2vw;
     flex-direction: column;
     justify-content: right;
-    background-color: rgba(247, 245, 245, 0.313);
+    background-color: rgba(255, 255, 255, 0.25);
+}
+.loginform:hover{
+    border: 2px solid white;
 }
 
 
@@ -46,13 +52,23 @@
 }
 .inputContainer input{
     width: 100%;
-    height: 40px;
+    height: 30px;
     padding: 2px;
     font-size: 15px;
-    border: 2px solid black;
+    border: 2px solid rgba(237, 237, 235, 0.57);
     border-radius: 8px;
     color: black;
     background-color:white;
+    outline: none;
+}
+.inputContainer input:valid{
+    border: 3px solid  green !important;
+    
+    outline: none;
+}
+.inputContainer input:focus{
+    border-color: red ;
+    /* outline: none; */
 }
 .inputContainer label{
     font-size: 20px;
@@ -64,22 +80,25 @@
     /* align-items: center; */
 }
 .formSubmit{
-      align-self: start;
+    margin-left: -1.1em;
+    /* align-self: start; */
     padding-left: 5%;
 
 }
 .p{
+    margin-left: -1.1em;
     color: white;
     font-size: 15px;
     
 }
 .not{
-    align-self: start;
+    /* align-self: start; */
     padding-left: 5%;
     padding-top: 2%;
 }
 .h2{
     color: white;
+    font-size: 1.5em;
     
 }
 .inpTxt{
@@ -89,7 +108,9 @@
 .button{
     height: 3.5em;
     width: 6.5em;
+    font-weight: 800;
+    font-size: 1em;
     border-radius: 1em;
     background-color: orange;
-    color: black;
+    color: rgb(243, 241, 241);
 }

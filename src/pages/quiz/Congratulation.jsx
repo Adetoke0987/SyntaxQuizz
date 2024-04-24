@@ -26,7 +26,7 @@ const Congratulation = ({ score }) => {
 
   return (
     <div>
-      <h2>Congratulations!</h2>
+      <h2>Result</h2>
       <p>Your score: {scorePercentage}%</p>
       <p style={messageStyle}>{message}</p>
     </div>

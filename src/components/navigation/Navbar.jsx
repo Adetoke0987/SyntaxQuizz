@@ -2,8 +2,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Navbar.module.css";
-import { FcMenu } from 'react-icons/fc';
-import { IoShareOutline } from 'react-icons/io5';
 import { IoMdClose } from 'react-icons/io';
 import syntax from '../../../src/assets/logo2.png'
 

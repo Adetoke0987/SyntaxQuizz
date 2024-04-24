@@ -4,8 +4,6 @@ import Home from "./pages/Home";
 import Help from "./pages/Help";
 import LoginComponent from "./components/loginComponents/LoginComponent";
 import Questions from "./pages/quiz/Questions";
-import  Connect from "./pages/Connect";
-import Pricing from "./pages/Pricing";
 import UserProfile from "./pages/dashboard/userprofile/Userprofile";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Settings from "./pages/dashboard/settings/Settings";
@@ -27,14 +25,8 @@ const router = createBrowserRouter ([
                 index: "true",
                 element: <Home />
             },
-            {
-                path: "/connect",
-                element: <Connect/>
-            },
-            {
-                path: "/pricing",
-                element: <Pricing/>
-            },
+           
+         
             {
                 path: "/help",
                 element: <Help/>
@@ -91,7 +83,7 @@ const router = createBrowserRouter ([
                         element: <Records/>
                     },
                     {
-                        path: "/dashboard/congreatulations",
+                        path: "/dashboard/congratulation",
                         element: <Congratulation/>
                     }
                 ]
