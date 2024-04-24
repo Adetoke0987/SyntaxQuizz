@@ -53,7 +53,7 @@ const Questions = () => {
     setAnsweredCount((prevCount) => prevCount + 1);
     startTimer();
     if (answeredCount + 1 >= 5) {
-      history.push("/congratulation");
+      history.push("/dashboard/congratulation");
     }
   };
 
