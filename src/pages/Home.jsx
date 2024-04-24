@@ -18,9 +18,10 @@ const Home = () => {
         <h1 className={style.h1}>
           QUIZ <span style={{ color: "rgb(245, 160, 3)" }}>NOW</span>
         </h1>
-        <p id={style.paragraph1}>
-          The versatile data collection tool for professionals. Typeform makes
-          asking easy and answering refreshing
+        <p id={style.paragraph1}> 
+          professional courses often rely on professional quizzes to gauge your professional knowledge . 
+          Structure your organizational  questions for your team to make better decision and promotions
+
         </p>
         <div>
           <Link to={"/login"}>
