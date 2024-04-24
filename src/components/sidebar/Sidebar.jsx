@@ -26,12 +26,11 @@ const Sidebar = ({ onLogout }) => {
   };
 
   return (
-    <div id={style.side-wrapper}>
-      <div id="gold">
-        <div id="links">
-          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile">
-            {" "}
-            User Profile
+    <div id={style.sidewrapper}>
+      <div id={style.gold}>
+        <div id={style.links}>
+          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile" className={style.linktext}>
+             User Profile
           </NavLinks>
           <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz">
             {" "}

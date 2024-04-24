@@ -5,7 +5,7 @@ const NavLinks = ({to, children, icon}) => {
   return (
     <>
       <NavLink  to={to}>
-        <div id='navlinks'>
+        <div >
             <span>{icon}</span>
             <span>{children}</span>
         </div>

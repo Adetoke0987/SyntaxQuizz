@@ -1,14 +1,14 @@
 import React from 'react';
 import Sidebar from '../../components/sidebar/Sidebar';
 import { Outlet } from 'react-router-dom';
-import './dashboard.css';
+import style from './dashboard.module.css';
 
 const Dashboard = ({ location }) => {
   // Use optional chaining to safely access location.state
   const user = location?.state?.user;
 
   return (
-    <div className="dashboard-main">
+    <div className={style.mainDash}>
       <Sidebar />
       <Outlet />
     </div>

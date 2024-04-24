@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.homeContainer {
+  padding: 2.4em;
+  /* background-color: #f8f8f8; */
+  width: 20vw   ;
+  height: 40vh;
+  color: rgb(245, 160, 3);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 3s, transform 2.5s;
+}
+.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-content {
+  text-align: center; /* Center hero content */
+  max-width: 600px; /* Limit hero content width */
+}
+
+.h6 {
+  color: white;
+  font-size: 2em;
+  font-weight: bold; /* Add boldness for emphasis */
+  margin-bottom: 20px;
+  margin-top: 10%;
+}
+
+.h1 {
+  color: white;
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: -15px;
+}
+
+#paragraph1 {
+  color: #fcfcfc; /* Use a darker color for better readability */
+  font-size: 1.3em;
+  text-align: justify;
+  line-height: 1.5; /* Adjust line height for better spacing */
+  /* margin-top: 10px; */
+  /* max-width: 400px; */
+  /* background-color: green; */
+}
+
+.button {
+  background-color: orange;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px; /* Consistent border radius */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* .teams {
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+} */
+
+/* .teams h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+  height: 20vh;
+  margin-bottom: 20px;
+} */
+/* .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.profilecard {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 17vw;
+  height: 40vh;
+}
+
+.profilecard img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid;
+}
+.profilecard h2 {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.profilecard p {
+  margin: 0;
+  padding: 0;
+  color: black;
+} */
+
+.footer {
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  margin-top:300px;  
+  /* background-color: firebrick; */
+  justify-content: center;
+  align-items: center;
+  /* opacity: 0; */
+  transform: translateY(-80px);
+  transition: opacity 3s, transform 2.5s;
+}
+.showfoot{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer p {
+  color: white;
+  font-weight: 700;
+}

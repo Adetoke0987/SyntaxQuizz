@@ -57,7 +57,7 @@ const LoginComponent = () => {
 
   return (
     <div className={style.main}>
-      <form onSubmit={null}>
+      <form onSubmit={addUsers} className={style.loginform}>
         {logInInputs.map(
           ({
             labelText,

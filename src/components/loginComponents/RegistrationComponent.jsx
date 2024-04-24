@@ -61,7 +61,7 @@ const RegistrationComponent = () => {
 
   return (
     <div className={style.main}>
-      <form onSubmit={addUsers}>
+      <form onSubmit={addUsers} className={style.registerform}>
         <h2 className={style.h2}>Register Your Account</h2>
         {inputs.map(
           ({
