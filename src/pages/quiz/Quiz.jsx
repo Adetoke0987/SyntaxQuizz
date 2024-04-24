@@ -11,43 +11,101 @@ const Quiz = () => {
   const popHandler = () => {
     setPop(!pop)
   }
-  
+
 
   return (
-    <div className= 'categories-body' >
-      <div className= 'allQuiz'>
-        <div className= 'cartoon quizBox' onClick={popHandler}>
-          <h3 id='title'>Cartoon Category</h3>
+    <div className='all_prof'>
+      <div className='categories-body' >
+         <h2 id='Et'>Entry Level</h2>
+        <div className='allQuiz'>
+          
+          <div className='project quizBox' onClick={popHandler}>
+            <h3 id='title'>Project Management</h3>
+          </div>
+          <div className='ict quizBox' onClick={popHandler}>
+            <h3 id='title'>Information Technology</h3>
+          </div>
+          <div className='acct quizBox' onClick={popHandler}>
+            <h3 id='title'>Accounting</h3>
+          </div>
+          <div className='logic quizBox' onClick={popHandler}>
+            <h3 id='title'>Logistics</h3>
+          </div>
+          <div className='hr quizBox' onClick={popHandler}>
+            <h3 id='title'>Human Resourse</h3>
+          </div>
+          <div className='ba quizBox' onClick={popHandler}>
+            <h3 id='title'>Business Adminstration</h3>
+          </div>
+          <div className='mkt quizBox' onClick={popHandler}>
+            <h3 id='title'>Marketing</h3>
+          </div>
+          <div className='add quizBox' onClick={popHandler}>
+            <h3 id='titleA'>+</h3>
+          </div>
         </div>
-        <div className= 'geography quizBox' onClick={popHandler}>
-          <h3 id='title'>Geography Category</h3>
-        </div>
-        <div className= 'music quizBox' onClick={popHandler}>
-          <h3 id='title'>Music Category</h3>
-        </div>
-        <div className= 'science quizBox' onClick={popHandler}>
-          <h3 id='title'>Science Category</h3>
-        </div>
-        <div className= 'sport quizBox' onClick={popHandler}>
-          <h3 id='title'>Sport Category</h3>
-        </div>
-      </div>
-      {pop && (
-        <div className= 'pop'>
-            <div className= "popButtons">
-                <div className= "pop__controls">
-                   <button className= "pop__close"type="button"onClick={popHandler}>Ⅹ</button>
-                </div>
-                <div className= "allButtons">
-                     <NavLink to="/questions" id='btn'><p id='p'>Easy</p></NavLink>
-                     <NavLink to="/questions" id='btn'><p id='p'>Medium</p></NavLink>
-                     <NavLink to="/questions" id='btn'><p id='p'>Hard</p></NavLink>
-                     
-                </div>
-            </div>
-        </div>
-      )}
+        {pop && (
+          <div className='pop'>
+            <div className="popButtons">
+              <div className="pop__controls">
+                <button className="pop__close" type="button" onClick={popHandler}>Ⅹ</button>
+              </div>
+              <div className="allButtons">
+                <NavLink to="/questions" id='btn'><p id='p'>Easy</p></NavLink>
+                <NavLink to="/questions" id='btn'><p id='p'>Medium</p></NavLink>
+                <NavLink to="/questions" id='btn'><p id='p'>Hard</p></NavLink>
 
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
+        <div className='categories-body2' >
+          <h2 id='pl'>Proffessional Level</h2>
+        <div className='allQuiz2'>
+          <div className='project quizBox' onClick={popHandler}>
+            <h3 id='title'>Project Management</h3>
+          </div>
+          <div className='ict quizBox' onClick={popHandler}>
+            <h3 id='title'>Information Technology</h3>
+          </div>
+          <div className='acct quizBox' onClick={popHandler}>
+            <h3 id='title'>Accounting</h3>
+          </div>
+          <div className='logic quizBox' onClick={popHandler}>
+            <h3 id='title'>Logistics</h3>
+          </div>
+          <div className='hr quizBox' onClick={popHandler}>
+            <h3 id='title'>Human Resourse</h3>
+          </div>
+          <div className='ba quizBox' onClick={popHandler}>
+            <h3 id='title'>Business Adminstration</h3>
+          </div>
+          <div className='mkt quizBox' onClick={popHandler}>
+            <h3 id='title'>Marketing</h3>
+          </div>
+          <div className='add quizBox' onClick={popHandler}>
+            <h3 id='titleA'>+</h3>
+          </div>
+        </div>
+        {pop && (
+          <div className='pop'>
+            <div className="popButtons">
+              <div className="pop__controls">
+                <button className="pop__close" type="button" onClick={popHandler}>Ⅹ</button>
+              </div>
+              <div className="allButtons">
+                <NavLink to="/questions" id='btn'><p id='p'>Easy</p></NavLink>
+                <NavLink to="/questions" id='btn'><p id='p'>Medium</p></NavLink>
+                <NavLink to="/questions" id='btn'><p id='p'>Hard</p></NavLink>
+
+              </div>
+            </div>
+          </div>
+        )}
+
+      </div>
     </div>
   )
 }
