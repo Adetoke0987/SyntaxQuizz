@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom"; // Import useHistory for navigation
+import { useHistory } from "react-router-dom";
 import "./question.css";
 
 const Questions = () => {
@@ -7,9 +7,9 @@ const Questions = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [clickedAnswers, setClickedAnswers] = useState([]);
   const [answeredCount, setAnsweredCount] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(20); // Time left for each question
+  const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-  const history = useHistory(); // Access history object for navigation
+  const history = useHistory();
 
   useEffect(() => {
     fetch(
@@ -23,7 +23,7 @@ const Questions = () => {
       })
       .then((data) => {
         setQuizz(data.results);
-        startTimer(); // Start timer once data is fetched
+        startTimer();
       })
       .catch((error) => {
         console.error("Error fetching data:", error);
@@ -32,7 +32,7 @@ const Questions = () => {
 
   useEffect(() => {
     if (timerRunning && timeLeft === 0) {
-      handleNextQuestion(); // Move to the next question if time runs out
+      handleNextQuestion();
     }
   }, [timerRunning, timeLeft]);
 
@@ -40,7 +40,7 @@ const Questions = () => {
     setTimerRunning(true);
     setTimeLeft(20);
     const timer = setTimeout(() => {
-      handleNextQuestion(); // Move to the next question after 20 seconds
+      handleNextQuestion();
     }, 20000);
     return () => clearTimeout(timer);
   };
@@ -51,19 +51,17 @@ const Questions = () => {
     );
     setClickedAnswers([]);
     setAnsweredCount((prevCount) => prevCount + 1);
-    startTimer(); // Start timer for the next question
+    startTimer();
     if (answeredCount + 1 >= 5) {
-      // Navigate to the Congratulation component after 5 questions answered
       history.push("/congratulation");
     }
   };
 
   const handleAnswerClick = (answer) => {
     setClickedAnswers((prevClick) => [...prevClick, answer]);
-    handleNextQuestion(); // Move to the next question when an answer is clicked
+    handleNextQuestion();
   };
 
-  // Shuffle the answers array
   const shuffleAnswers = (answers, i = answers.length - 1) => {
     if (i === 0) return answers;
 
