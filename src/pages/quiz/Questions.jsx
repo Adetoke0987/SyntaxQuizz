@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import "./question.css";
 
 const Questions = () => {
@@ -9,7 +9,7 @@ const Questions = () => {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     fetch(
