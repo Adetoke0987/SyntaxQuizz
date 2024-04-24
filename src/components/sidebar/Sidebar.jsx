@@ -84,7 +84,7 @@ const Sidebar = ({ onLogout }) => {
       </div>
       <div id="out" onClick={handleLogout}>
        
-      <Link to="/dashboard/logout"> 
+      <Link to="../../../pages/dashboard/logout/logout.jsx"> 
           <h3>
             <IoIosLogOut />
           </h3>

@@ -1,24 +1,14 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 
 const Records = () => {
+  // State variables for notification settings
+  
 
-    const [score, setScore] = useState(0);
+  return (
+    <div className="notification-settings">
+      fdobhfbnjnjjj
+    </div>
+  );
+};
 
-    const saveScore = () => {
- 
-      console.log("Score saved:", score);
-    };
-  
-    return (
-      <div>
-        <h2>Record Score</h2>
-        <p>Your current score: {score}</p>
-        <button onClick={() => setScore(score + 1)}>Increment Score</button>
-        <button onClick={saveScore}>Save Score</button>
-      </div>
-    );
-  };
-  
-  export default Records;
-  
+export default Records;
