@@ -3,9 +3,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
     text-align: center;
     padding: 20px;
+    margin-top: 10vh    ;
   }
   
   h3, p {
@@ -20,24 +21,61 @@
   }
   
   .quizz {
-    background-color: #f0f0f0;
+    background-color: rgba(255, 166, 0, 0.206);
     border-radius: 10px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     width: 80%;
   }
+  .quizText{
+    color: white;
+  }
   
-  #answers {
+  /* #answers {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto, (200px, 200px));
     grid-gap: 10px;
     margin-top: 20px;
-  }
+    background-color: firebrick;
+  } */
   
   #answers span {
     background-color: #222a2c;
     color: #fff;
+    
+    font-family: 'Open Sans', sans-serif;
+    
+
+}
+
+#question{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+#answers{
+    border: 1px solid white;
+    color: white;
+
+    display:grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 10px;
+    
+}
+.answer{
+    border: 1px solid white;
+}
+
+
+#ans{
+    background-color:#222A2C;
+    color: rgb(255, 255, 255);
     border-radius: 30px;
     padding: 10px 20px;
     border: 5px solid #fefffb;
@@ -51,3 +89,11 @@
     background-color: #555;
   }
   
+  
+.quest{
+    color: orange;
+}
+    
+   
+
+

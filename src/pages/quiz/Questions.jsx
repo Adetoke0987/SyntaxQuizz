@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
-import "./question.css";
+// import { useHistory } from "react-router-dom";
+
+import style from './question.module.css';
 
 const Questions = () => {
   const [quizz, setQuizz] = useState([]);
@@ -9,7 +10,7 @@ const Questions = () => {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     fetch(
@@ -85,20 +86,14 @@ const Questions = () => {
   ]);
 
   return (
-    <div id="main">
-      <div className="quizz">
-        <p>Time Left: {timeLeft} seconds</p>
-        <p>
-          Question {currentIndex + 1} of {quizz.length}
-        </p>
-        <p>Questions Answered: {answeredCount}</p>
-        <h2>Category</h2>
-        <h3 className="quest">{post.question}</h3>
-        <div id="answers">
+    <div id={style.main}>
+      <div className={style.quizz}>
+        <h2 className={style.quizText}>Category</h2>
+
+        <h3 className={style.quest}>{post.question}</h3>
+        <div id={style.answers}>
           {shuffledAnswers.map((answer, index) => (
-            <span key={index} onClick={() => handleAnswerClick(answer)}>
-              {answer}
-            </span>
+            <span key={index} onClick={() => handleAnswerClick(answer)} className={style.answer}>{answer}</span>
           ))}
         </div>
       </div>
