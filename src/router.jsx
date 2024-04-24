@@ -16,7 +16,7 @@ import QuizSetting from "./pages/dashboard/settings/QuizSetting";
 import Quiz from "./pages/quiz/Quiz";
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
 import Congratulation from "./pages/quiz/Congratulation";
-import Logout from "./pages/dashboard/logout/Logout";
+// import Logout from "./pages/dashboard/logout/Logout";
 
 
 
@@ -96,10 +96,10 @@ const router = createBrowserRouter ([
                         path: '/dashboard/records',
                         element: <Records/>
                     },
-                    {
-                        path: "/dashboard/logout",
-                        element : <Logout/>
-                    }
+                    // {
+                    //     path: "/dashboard/logout",
+                    //     element : <Logout/>
+                    // }
 
                 ]
             }
