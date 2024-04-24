@@ -67,7 +67,7 @@
     outline: none;
 }
 .inputContainer input:focus{
-    border-color: red;
+    border-color: red ;
     /* outline: none; */
 }
 .inputContainer label{
