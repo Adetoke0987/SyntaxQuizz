@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import "./question.css";
 
 const Questions = () => {
@@ -9,7 +8,8 @@ const Questions = () => {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-  const history = useHistory();
+  const [intervalId, setIntervalId] = useState(null);
+  const [shuffledAnswers, setShuffledAnswers] = useState([]);
 
   useEffect(() => {
     fetch(
@@ -23,6 +23,7 @@ const Questions = () => {
       })
       .then((data) => {
         setQuizz(data.results);
+        setShuffledAnswers(shuffleAnswers(data.results[currentIndex]));
         startTimer();
       })
       .catch((error) => {
@@ -36,25 +37,46 @@ const Questions = () => {
     }
   }, [timerRunning, timeLeft]);
 
+  useEffect(() => {
+    if (answeredCount + 1 >= 5) {
+      // Calculate the score based on the number of correct answers
+      const correctAnswers = quizz.filter((question, index) => {
+        return clickedAnswers[index] === question.correct_answer;
+      }).length;
+      const score = (correctAnswers / 5) * 100; // Assuming there are 5 questions
+
+      // Redirect to the Congratulation component with the calculated score
+      window.location.href = `/dashboard/congratulation?score=${score}`;
+    }
+  }, [answeredCount, quizz, clickedAnswers]);
+
   const startTimer = () => {
-    setTimerRunning(true);
-    setTimeLeft(20);
-    const timer = setTimeout(() => {
-      handleNextQuestion();
-    }, 20000);
-    return () => clearTimeout(timer);
+    if (!timerRunning) {
+      setTimerRunning(true);
+      setTimeLeft(20);
+      const id = setInterval(() => {
+        setTimeLeft((prevTimeLeft) => {
+          if (prevTimeLeft === 0) {
+            clearInterval(id);
+            handleNextQuestion();
+            return 20;
+          }
+          return prevTimeLeft - 1;
+        });
+      }, 1000);
+      setIntervalId(id);
+    }
   };
 
   const handleNextQuestion = () => {
+    clearInterval(intervalId);
     setCurrentIndex((prevIndex) =>
       prevIndex + 1 >= quizz.length ? 0 : prevIndex + 1
     );
     setClickedAnswers([]);
     setAnsweredCount((prevCount) => prevCount + 1);
+    setShuffledAnswers(shuffleAnswers(quizz[currentIndex + 1]));
     startTimer();
-    if (answeredCount + 1 >= 5) {
-      history.push("/congratulation");
-    }
   };
 
   const handleAnswerClick = (answer) => {
@@ -62,16 +84,13 @@ const Questions = () => {
     handleNextQuestion();
   };
 
-  const shuffleAnswers = (answers, i = answers.length - 1) => {
-    if (i === 0) return answers;
-
-    const randomShuffledAnswers = Math.floor(Math.random() * (i + 1));
-    [answers[i], answers[randomShuffledAnswers]] = [
-      answers[randomShuffledAnswers],
-      answers[i],
-    ];
-
-    return shuffleAnswers(answers, i - 1);
+  const shuffleAnswers = (question) => {
+    const answers = [...question.incorrect_answers, question.correct_answer];
+    for (let i = answers.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [answers[i], answers[j]] = [answers[j], answers[i]];
+    }
+    return answers;
   };
 
   if (!quizz.length) {
@@ -79,17 +98,13 @@ const Questions = () => {
   }
 
   const post = quizz[currentIndex];
-  const shuffledAnswers = shuffleAnswers([
-    ...post.incorrect_answers,
-    post.correct_answer,
-  ]);
 
   return (
     <div id="main">
       <div className="quizz">
         <p>Time Left: {timeLeft} seconds</p>
         <p>
-          Question {currentIndex + 1} of {quizz.length}
+          Question {currentIndex + 1} of {quizz.length - 5}
         </p>
         <p>Questions Answered: {answeredCount}</p>
         <h2>Category</h2>
