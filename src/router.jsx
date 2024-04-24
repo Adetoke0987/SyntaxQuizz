@@ -83,7 +83,7 @@ const router = createBrowserRouter ([
                         element: <Records/>
                     },
                     {
-                        path: "/dashboard/congreatulations",
+                        path: "/dashboard/congratulation",
                         element: <Congratulation/>
                     }
                 ]
