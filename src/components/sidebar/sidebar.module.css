@@ -1,9 +1,7 @@
 #sidewrapper{
     width: 15vw;
     height: 90vh;
-    border-top-right-radius: 50px;
-    background: rgb(245, 160, 3);
-    margin-left: -20px;
+    background: rgb(245, 160, 3)    ;
 }
 
 
