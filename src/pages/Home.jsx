@@ -19,8 +19,8 @@ const Home = () => {
           QUIZ <span style={{ color: "rgb(245, 160, 3)" }}>NOW</span>
         </h1>
         <p id={style.paragraph1}>
-          Professional courses often involve assessments to gauge professional knowledge. structure questions for your employees and  team to make better 
-          decision based on your organizational structure   
+          The versatile data collection tool for professionals. Typeform makes
+          asking easy and answering refreshing
         </p>
         <div>
           <Link to={"/login"}>
