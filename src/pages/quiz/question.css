@@ -1,67 +1,53 @@
-#main{
-    display:flex;
+#main {
+    display: flex;
     flex-direction: column;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
-    background-color:white;
-    text-align: center; 
-}
-
-h3, p {
+    background-color: white;
     text-align: center;
-    margin: 0;
-    padding: 0;
+    padding: 20px; /* Add padding for better spacing */
+  }
+  
+  h3, p {
     font-size: 1.5em;
     font-weight: 300;
-    color:white ;
+    color: #333; /* Change text color */
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
     line-height: 1.5em;
     letter-spacing: 0.05em;
-    
-    font-family: 'Open Sans', sans-serif;
-    
-
-}
-
-#question{
-    display:flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-
-#answers{
-
-    display:grid;
-    grid-template-columns: auto auto ;
+  }
+  
+  .quizz {
+    background-color: #f0f0f0; /* Light gray background for the quiz area */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    width: 80%; /* Adjust width */
+  }
+  
+  #answers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
     grid-gap: 10px;
-    
-}
-
-
-#ans{
-    background-color:#222A2C;
-    color: rgb(255, 255, 255);
+    margin-top: 20px; /* Add margin top for spacing */
+  }
+  
+  #answers span {
+    background-color: #222a2c;
+    color: #fff;
     border-radius: 30px;
     padding: 10px 20px;
     border: 5px solid #fefffb;
     cursor: pointer;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 8px;
-    margin-right: 10px;
     font-size: 15px;
-    /* font-weight: 600; */
-    text-transform: uppercase;
-    width: 20rem;
-
-}
-.quest{
-    color: black;
-}
-    
-   
-
-
+    width: 100%; /* Make spans take full width */
+    text-align: center; /* Center align text */
+  }
+  
+  #answers span:hover {
+    background-color: #555; /* Darken color on hover */
+  }
+  
