@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import { useHistory } from "react-router-dom";
-import "./question.css";
-import "./question.module.css";
+import "./question.module.css"; // Assuming you're using CSS modules
 
 const Questions = () => {
   const [quizz, setQuizz] = useState([]);
@@ -10,8 +8,6 @@ const Questions = () => {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-  // const history = useHistory();
-
   const [intervalId, setIntervalId] = useState(null);
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
 
