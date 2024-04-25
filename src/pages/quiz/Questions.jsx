@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-<<<<<<< HEAD
 // import { useHistory } from "react-router-dom";
 import "./question.css";
-=======
 import "./question.module.css";
->>>>>>> 332bf336c114d6cd8ba06cc3f6dc235c421b2979
 
 const Questions = () => {
   const [quizz, setQuizz] = useState([]);
@@ -13,12 +10,10 @@ const Questions = () => {
   const [answeredCount, setAnsweredCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState(20);
   const [timerRunning, setTimerRunning] = useState(false);
-<<<<<<< HEAD
   // const history = useHistory();
-=======
+
   const [intervalId, setIntervalId] = useState(null);
   const [shuffledAnswers, setShuffledAnswers] = useState([]);
->>>>>>> 332bf336c114d6cd8ba06cc3f6dc235c421b2979
 
   useEffect(() => {
     fetch(
