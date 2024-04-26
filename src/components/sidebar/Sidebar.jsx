@@ -24,30 +24,57 @@ const Sidebar = ({ onLogout }) => {
     const changed = !showSettingsDropdown;
     setShowSettingsDropdown(changed);
   };
+  const sideBarLinks = [
+    {
+      to: "/dashboard",
+      icon: <FaUser/>,
+      children: "User Profile"
+    },
+    {
+      to: "/dashboard/quiz",
+      icon: <MdQuiz />,
+      children: "Quizz"
+    },
+    {
+      to: "/dashboard/records",
+      icon: <MdQuestionAnswer />,
+      children: "Records"
+    }
+  ]
+  const dropDown = [
+    {
+      to: "/dashboard/settings",
+      icon:    <FiSettings />,
+      children: "General Settings"
+    },
+    {
+      to: "/dashboard/settings/notification",
+      icon:     <MdEditNotifications />,
+      children: "Notification Settings"
+    },
+    {
+      to: "/dashboard/settings/quizset",
+      icon:     <MdOutlineDisplaySettings />,
+      children: "Quiz Settings"
+    }
+    
+  ]
 
   return (
     <div id={style.sidewrapper}>
       <div id={style.gold}>
         <div id={style.links}>
-          <NavLinks to="/dashboard/" icon={<FaUser />} label="User Profile" className={style.linktext}>
-             User Profile
-          </NavLinks>
-          <NavLinks to="/dashboard/quiz" icon={<MdQuiz />} label="Quiz">
-            {" "}
-            Quiz
-          </NavLinks>
-          <NavLinks
-            to="/dashboard/records"
-            icon={<MdQuestionAnswer />}
-            label="Records"
-          >
-            Records
-          </NavLinks>{" "}
+          {
+            sideBarLinks.map(({to,children,icon})=>(
+              <NavLinks to={to} children={children} icon={icon} className={style.a} />
+            ))
+          }
           {/* Dropdown for Settings */}
-          <div className="dropdown-wrapper">
+          <div >
             <div
-              className="dropdown-header"
+
               onClick={change}
+              className={`${style.drop} ${showSettingsDropdown? style.active: ""}`}
             >
               <span>
                 {showSettingsDropdown ? (
@@ -59,23 +86,12 @@ const Sidebar = ({ onLogout }) => {
               <span id="drp">Settings</span>
             </div>
             {showSettingsDropdown && (
-              <div className="dropdown-content">
-                <NavLinks to="/dashboard/settings" className="dropdown-links">
-                  <FiSettings />
-                  General Settings
-                </NavLinks>
-                <NavLinks
-                  to="/dashboard/settings/notification"
-                  className="dropdown-links"
-                >
-                  <MdEditNotifications /> Notification Settings
-                </NavLinks>
-                <NavLinks
-                  to="/dashboard/settings/quizset"
-                  className="dropdown-links"
-                >
-                  <MdOutlineDisplaySettings /> Quiz Settings
-                </NavLinks>
+              <div className={style.dropInfo}>
+               {
+                dropDown.map(({to, icon,children})=>(
+                  <NavLinks to={to} children={children} icon={icon} className={style.dropped}/>
+                ))
+               }
                 {/* Add more settings links as needed */}
               </div>
             )}
