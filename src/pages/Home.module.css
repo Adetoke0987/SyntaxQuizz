@@ -17,10 +17,10 @@
 .btndiv{
   /* width: 10vw; */
   /* background-color: darkblue; */
-  /* margin-left: 200px; */
-  display: flex;
+  margin-left: 200px;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
 }
 .show{
   opacity: 1;
@@ -69,11 +69,8 @@
   margin-top: 10px;
 }
 
-.button:hover {
-  color: orange;
-  font-weight: 700;
-  font-size: 25px;
-  background-color: white;
+button:hover {
+  background-color: #0056b3;
 }
 
 

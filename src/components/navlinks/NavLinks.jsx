@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import './navlink.module.css'
 
-const NavLinks = ({to, children, icon, className}) => {
+const NavLinks = ({to, children, icon}) => {
   return (
     <>
-      <NavLink  to={to} className={className}>
+      <NavLink  to={to}>
         <div >
             <span>{icon}</span>
             <span>{children}</span>

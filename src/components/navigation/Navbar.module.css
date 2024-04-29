@@ -1,6 +1,4 @@
-.active{
-  background-color: darkblue;
-}
+
 
 .navbarContainer {
     display: flex;
@@ -17,11 +15,6 @@
     font-size: 30px;
     font-weight: 700;
     cursor: pointer;
-  }
-  .hamburger:hover{
-    font-size: 40px;
-    padding: 10px;
-    color: orange;
   }
   .text2{
     display: flex;
@@ -50,10 +43,6 @@
     /* transition: transform 5.5s ease;
     transform: translateY(-40%); */
 
-
-  }
-  .linkscontainer:hover{
-    width: 24vw;
   }
   /* .linkscontainer .navlink .active{
     transform: translateY(0);
@@ -64,7 +53,6 @@
     text-decoration: none;
     margin-right: 20px;
     font-weight: 500;
-    font-size: 20px;
     /* opacity: 0;
     transition: opacity 5.5s ease; */
   
@@ -74,15 +62,8 @@
   } */
   
   .navlink:hover {
-    /* text-decoration: none; */
-    text-align: center;
-    font-size: 30px;
-    border: 2px solid orange;
-    /* background-color: bisque; */
-    width: 100px;
-    border-radius: 5px;
-    height: 100%;
-    margin-left: 10px;
+    text-decoration: none;
+ 
   }
 
   
@@ -98,12 +79,13 @@
   }
   
   .createbutton:hover {
-    background-color: white;
-    font-size: 20px;
-    color: orange;
+    background-color: #0f0f10;
     cursor: pointer;
 
   }
-
+  .active{ 
+    border: 2px solid orange;
+     border-bottom: 3px solid rgb(245, 160, 3); 
+}
  
   
