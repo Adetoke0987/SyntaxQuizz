@@ -1,192 +1,123 @@
-// import React, { useState, useEffect } from "react";
-// // import "../../../question.module.css"; // Assuming you're using CSS modules
+// AccountingApi.js
 
-// const AccountingApi = () => {
-//   const [quizz, setQuizz] = useState([]);
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [clickedAnswers, setClickedAnswers] = useState([]);
-//   const [answeredCount, setAnsweredCount] = useState(0);
-//   const [timeLeft, setTimeLeft] = useState(20);
-//   const [timerRunning, setTimerRunning] = useState(false);
-//   const [intervalId, setIntervalId] = useState(null);
-//   const [shuffledAnswers, setShuffledAnswers] = useState([]);
-
-//   useEffect(() => {
-//     fetch(
-//       "https://questionsapi-1.onrender.com/api/quiz"
-//     )
-//       .then((response) => {
-//         if (!response.ok) {
-//           throw new Error("Failed to fetch data");
-//         }
-//         return response.json();
-//       })
-//       .then((data) => {
-//         setQuizz(data.results);
-//         setShuffledAnswers(shuffleAnswers(data.results[currentIndex]));
-//         startTimer();
-//       })
-//       .catch((error) => {
-//         console.error("Error fetching data:", error);
-//       });
-//   }, []);
-
-//   useEffect(() => {
-//     if (timerRunning && timeLeft === 0) {
-//       handleNextQuestion();
-//     }
-//   }, [timerRunning, timeLeft]);
-
-//   useEffect(() => {
-//     if (answeredCount + 1 >= 5) {
-//       // Calculate the score based on the number of correct answers
-//       const correctAnswers = quizz.filter((question, index) => {
-//         return clickedAnswers[index] === question.correctAnswer;
-//       }).length;
-//       const score = (correctAnswers / 5) * 100; // Assuming there are 5 questions
-
-//       // Redirect to the Congratulation component with the calculated score
-//       window.location.href = `/dashboard/congratulation?score=${score}`;
-//     }
-//   }, [answeredCount, quizz, clickedAnswers]);
-
-//   const startTimer = () => {
-//     if (!timerRunning) {
-//       setTimerRunning(true);
-//       setTimeLeft(20);
-//       const id = setInterval(() => {
-//         setTimeLeft((prevTimeLeft) => {
-//           if (prevTimeLeft === 0) {
-//             clearInterval(id);
-//             handleNextQuestion();
-//             return 20;
-//           }
-//           return prevTimeLeft - 1;
-//         });
-//       }, 1000);
-//       setIntervalId(id);
-//     }
-//   };
-
-//   const handleNextQuestion = () => {
-//     clearInterval(intervalId);
-//     setCurrentIndex((prevIndex) =>
-//       prevIndex + 1 >= quizz.length ? 0 : prevIndex + 1
-//     );
-//     setClickedAnswers([]);
-//     setAnsweredCount((prevCount) => prevCount + 1);
-//     setShuffledAnswers(shuffleAnswers(quizz[currentIndex + 1]));
-//     startTimer();
-//   };
-
-//   const handleAnswerClick = (answer) => {
-//     setClickedAnswers((prevClick) => [...prevClick, answer]);
-//     handleNextQuestion();
-//   };
-
-//   const shuffleAnswers = (question) => {
-//     const answers = [...question.options, question.correctAnswer];
-//     for (let i = answers.length - 1; i > 0; i--) {
-//       const j = Math.floor(Math.random() * (i + 1));
-//       [answers[i], answers[j]] = [answers[j], answers[i]];
-//     }
-//     return answers;
-//   };
-
-//   if (!quizz.length) {
-//     return <div>Loading...</div>;
-//   }
-
-//   const post = quizz[currentIndex];
-
-//   return (
-//     <div id="main">
-//       <div className= "quizz">
-//         <p>Time Left: {timeLeft} seconds</p>
-//         <p>
-//           Question {currentIndex + 1} of {quizz.length - 5}
-//         </p>
-//         <p>Questions Answered: {answeredCount}</p>
-//         <h2>Category</h2>
-//         <h3 className= "quest">{post.questions.question}</h3>
-//         <div id="answers">
-//           {shuffledAnswers.map((answer, index) => (
-//             <span key={index} onClick={() => handleAnswerClick(answer)}>
-//               {answer}
-//             </span>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AccountingApi;
 import React, { useState, useEffect } from 'react';
+import './acct.css'; // Import CSS file for styling
+import ResultComponent from '../../ResulComponent'; // Import the ResultComponent
 
 function AccountingApi() {
-  const [accountingQuestions, setAccountingQuestions] = useState([]);
+  const [questions, setQuestions] = useState([]);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [timer, setTimer] = useState(10); // Timer starts at 10 seconds
+  const [selectedAnswers, setSelectedAnswers] = useState([]); // State to store selected answers
+  const [isCorrect, setIsCorrect] = useState(null); // State to track if the selected answer is correct
+  const [score, setScore] = useState(0); // State to store the score
 
   useEffect(() => {
     fetch('https://questionsapi-1.onrender.com/api/quiz')
       .then(response => response.json())
       .then(data => {
-        // Filter questions by the "Accounting" category
-        const accountingQuestions = data.filter(question => category.questions.question === 'Accounting');
-        setAccountingQuestions(accountingQuestions);
+        // Filter questions to get only those from the "Accounting" category
+        const accountingQuestions = data.find(category => category.category === "Accounting");
+        // Modify correctAnswer to store the index of the correct answer as a number
+        const modifiedQuestions = accountingQuestions.questions.map(question => ({
+          ...question,
+          correctAnswer: question.options.findIndex((option, index) => index === question.correctAnswer)
+        }));
+        setQuestions(modifiedQuestions);
+        // Initialize selected answers array with the same length as questions array, filled with nulls
+        setSelectedAnswers(new Array(modifiedQuestions.length).fill(null));
       })
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (timer > 0) {
+        setTimer(timer - 1);
+      } else {
+        // Move to the next question if timer reaches 0
+        handleNextQuestion();
+      }
+    }, 1000);
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [timer, questions]);
+
+  const handleAnswerClick = (index) => {
+    // Update selected answers array with the clicked answer
+    const newSelectedAnswers = [...selectedAnswers];
+    newSelectedAnswers[currentQuestionIndex] = index;
+    setSelectedAnswers(newSelectedAnswers);
+
+    // Check if the selected answer is correct
+    setIsCorrect(index === questions[currentQuestionIndex].correctAnswer);
+    
+    // Calculate score after selecting an answer
+    calculateScore();
+    
+    // Move to the next question immediately
+    handleNextQuestion();
+  };
+
+  const calculateScore = () => {
+    let correctAnswers = 0;
+    questions.forEach((question, index) => {
+      if (selectedAnswers[index] === question.correctAnswer) {
+        correctAnswers++;
+      }
+    });
+    setScore(correctAnswers);
+  };
+
+  const handleNextQuestion = () => {
+    // Move to the next question if not the last question
+    if (currentQuestionIndex < questions.length - 1) {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      setTimer(10); // Reset timer for the next question
+    } else {
+      // If it's the last question, calculate and set the score
+      calculateScore();
+      setCurrentQuestionIndex(questions.length); // Set index to show result
+    }
+
+    // Reset isCorrect state for the next question
+    setIsCorrect(null);
+  };
+
+  if (currentQuestionIndex === questions.length) {
+    // If the current question index is equal to the total number of questions, show result
+    return <ResultComponent score={score} totalQuestions={questions.length} />;
+  }
+
   return (
-    <div>
-      <h1>Accounting Quiz</h1>
-      {accountingQuestions.length > 0 ? (
-        // If accountingQuestions are available
-        <div>
-          {accountingQuestions.map((question, index) => (
-            <div key={index}>
-              <h2>{questions.question}</h2>
-              <p>Correct Answer: {questions.correctAnswer}</p>
-              <ul>
-                {question.options.map((option, optionIndex) => (
-                  <li key={optionIndex}>
-                    {option}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+    <div className="app">
+      <h1 className="title">Who Wants to Be an Accountant?</h1>
+      <div className="instructions">
+        <p>Answer the following questions correctly to win!</p>
+        <p>You have {timer} seconds to answer each question.</p>
+      </div>
+      <div className="question-container">
+        <div className="question">
+          <h3>Question {currentQuestionIndex + 1}:</h3>
+          <p>{questions[currentQuestionIndex]?.question}</p>
+          <ul>
+            {questions[currentQuestionIndex]?.options.map((option, index) => (
+              <li 
+                key={index}
+                onClick={() => handleAnswerClick(index)} // Call handleAnswerClick when option is clicked
+                className={`option ${selectedAnswers[currentQuestionIndex] === index ? "selected" : ""} ${isCorrect !== null && isCorrect === (index === questions[currentQuestionIndex].correctAnswer) ? (isCorrect ? "correct" : "incorrect") : ""}`} // Apply selected and correct/incorrect class
+              >
+                {option}
+                {/* Display correct/incorrect text */}
+                {isCorrect !== null && isCorrect === (index === questions[currentQuestionIndex].correctAnswer) ? <span className="feedback">{isCorrect ? "Correct!" : "Incorrect"}</span> : null}
+              </li>
+            ))}
+          </ul>
         </div>
-      ) : (
-        // If accountingQuestions are still loading or empty
-        <p>{accountingQuestions.length === 0 ? 'No questions found for Accounting' : 'Loading...'}</p>
-      )}
+      </div>
     </div>
   );
 }
 
 export default AccountingApi;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -29,6 +29,60 @@
     background-color: rgb(253, 54, 87);
 }
 
-
-
+.app {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .instructions {
+    margin-bottom: 20px;
+  }
+  
+  .question-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .question {
+    text-align: left;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  
+  li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .selected {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .correct-answer {
+    color: green;
+    font-size: 0.8em;
+  }
+  
 
