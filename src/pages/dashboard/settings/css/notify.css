@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Base styles for all notification elements */
 .notification {
     display: flex;
@@ -42,4 +43,50 @@
   .notification .close-button:hover {
     color: #333; /* Darken on hover for better visibility */
   }
+=======
+/* Base styles for all notification elements */
+.notification {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px; /* Add spacing between notifications */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    cursor: pointer; /* Indicate interactivity (optional) */
+  }
+  
+  /* Specific styles for different notification types (replace with your desired class names) */
+  .notification.success {
+    background-color: #4CAF50; /* Green for success notifications */
+    color: white;
+  }
+  
+  .notification.error {
+    background-color: #F44336; /* Red for error notifications */
+    color: white;
+  }
+  
+  .notification.info {
+    background-color: #3F51B5; /* Blue for info notifications */
+    color: white;
+  }
+  
+  /* Optional styles for notification content */
+  .notification p {
+    margin: 0; /* Remove default margin for better spacing */
+    font-size: 0.9rem; /* Adjust font size as needed */
+  }
+  
+  /* Optional styles for close button (if you plan to include one) */
+  .notification .close-button {
+    margin-left: auto; /* Position the button to the right */
+    font-size: 1.2rem; /* Adjust font size for the close icon */
+    color: #ccc; /* Light gray color */
+    cursor: pointer; /* Indicate interactivity for close button */
+  }
+  
+  .notification .close-button:hover {
+    color: #333; /* Darken on hover for better visibility */
+  }
+>>>>>>> parent of f341fdb (update)
   
