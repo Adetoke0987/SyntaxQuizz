@@ -4,7 +4,7 @@ import './navlink.module.css'
 const NavLinks = ({to, children, icon}) => {
   return (
     <>
-      <NavLink  to={to}>
+      <NavLink  to={to}  >
         <div >
             <span>{icon}</span>
             <span>{children}</span>

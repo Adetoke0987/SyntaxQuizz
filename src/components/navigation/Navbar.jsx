@@ -1,16 +1,15 @@
-
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 import style from "./Navbar.module.css";
-import { IoMdClose } from 'react-icons/io';
-import syntax from '../../../src/assets/logo2.png'
+import { IoMdClose } from "react-icons/io";
+import syntax from "../../../src/assets/logo2.png";
+import NavLinks from "../navlinks/NavLinks";
 
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    const data = !isOpen
+    const data = !isOpen;
     setIsOpen(data);
   };
   // const revealLinks = ()=>{
@@ -39,52 +38,58 @@ const Navbar = () => {
   //     hideLinks();
   //   }
   // };
-
-
+  const navLinks = [
+    {
+      to: "/",
+      children: "Home",
+      className: style.navlink
+    },
+    {
+      to: "/help",
+      children: "Help",
+      className: style.navlink
+    },
+    {
+      to: "/login",
+      children: "Login",
+      className: style.navlink
+    },
+    {
+      to: "/signup",
+      children: "SignUp",
+      className: style.navlink
+    },
+    {
+      to: "/signup",
+      children: "Create Quiz",
+      className: style.createbutton
+    }
+  ]
   return (
     <nav className={style.navbarContainer}>
       <div className={style.text2}>
-        <div onClick={toggleMenu} >
-          {isOpen ? <IoMdClose /> : <span className={style.hamburger}>≡</span>}
+        <div onClick={toggleMenu}>
+          {isOpen ? <IoMdClose className={ `${isOpen? style.hamburger: ""}`} /> : <span className={`${!isOpen ? style.hamburger:""}`}>≡</span>}
         </div>
         {isOpen && (
-            <div className={style.linkscontainer}>
-            <NavLink to="/" className={style.navlink}>
-              Home
-            </NavLink>
-            <NavLink to="/help" className={style.navlink}>
-              Help
-            </NavLink>
-            <NavLink to="/login" className={style.navlink}>
-              Login
-            </NavLink>
-            <NavLink to="/signup" className={style.navlink}>
-              Sign up
-            </NavLink>
-           
-            <NavLink to="/signup" className={style.createbutton}>
-              Create Quiz
-            </NavLink>
-  
+          <div className={style.linkscontainer}>
+           {
+            navLinks.map(({to,children,className})=>(
+              <NavLinks key={to} to={to} children={children} className={className} />
+
+            ))
+           }
           </div>
         )}
-          
-      
-          
-
-       
       </div>
-
 
       <div className={style.logocontainer}>
         {/* <NavLink to="/"> */}
-          <img src={syntax} alt="logo" className={style.logo}/>
+        <img src={syntax} alt="logo" className={style.logo} />
         {/* </NavLink> */}
       </div>
-
     </nav>
   );
 };
 
 export default Navbar;
-
