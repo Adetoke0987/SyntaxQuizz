@@ -2,7 +2,7 @@ import React, { createContext, useState } from 'react'
 
 
 
-export const userData = createContext()
+const userData = createContext()
 
 const UserContext = ({children}) => {
     const [users, setUsers] = useState([])
@@ -18,5 +18,6 @@ const UserContext = ({children}) => {
     </userData.Provider>
   )
 }
+
 
 export default UserContext

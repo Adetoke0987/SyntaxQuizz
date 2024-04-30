@@ -7,7 +7,7 @@ const UserProfile = ({ user }) => {
     return <div>Loading...</div>;
   }
 
-  const { firstName, lastName, email, quizStats } = user;
+  const { firstName, lastName, email} = user;
 
   // Get the first letter of the first name and last name
   const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`;
