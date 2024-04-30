@@ -27,7 +27,7 @@ const LoginComponent = () => {
     console.log(formData);
     try {
       const response = await axios.post(
-        'https://questionsapi.onrender.com/auth/user/id',
+        'https://questionsapi.onrender.com/auth/login',
         formData
       );
       const token = response.data.data.token;
