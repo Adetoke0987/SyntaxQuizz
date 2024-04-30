@@ -1,8 +1,6 @@
-// AccountingApi.js
-
 import React, { useState, useEffect } from 'react';
 import './acct.css'; // Import CSS file for styling
-import ResultComponent from '../../ResulComponent'; // Import the ResultComponent
+
 
 function AccountingApi() {
   const [questions, setQuestions] = useState([]);
@@ -11,6 +9,7 @@ function AccountingApi() {
   const [selectedAnswers, setSelectedAnswers] = useState([]); // State to store selected answers
   const [isCorrect, setIsCorrect] = useState(null); // State to track if the selected answer is correct
   const [score, setScore] = useState(0); // State to store the score
+  const [wrongAnswers, setWrongAnswers] = useState(0); // State to store the number of wrong answers
 
   useEffect(() => {
     fetch('https://questionsapi-1.onrender.com/api/quiz')
@@ -45,29 +44,49 @@ function AccountingApi() {
   }, [timer, questions]);
 
   const handleAnswerClick = (index) => {
+    // Check if the selected answer is correct
+    const correctIndex = questions[currentQuestionIndex].correctAnswer;
+    const isCorrectAnswer = index === correctIndex;
+
     // Update selected answers array with the clicked answer
     const newSelectedAnswers = [...selectedAnswers];
     newSelectedAnswers[currentQuestionIndex] = index;
     setSelectedAnswers(newSelectedAnswers);
 
-    // Check if the selected answer is correct
-    setIsCorrect(index === questions[currentQuestionIndex].correctAnswer);
-    
-    // Calculate score after selecting an answer
-    calculateScore();
+    // Set isCorrect state to indicate if the answer is correct
+    setIsCorrect(isCorrectAnswer);
+
+    // Calculate score and wrong answers count after selecting an answer
+    calculateScore(isCorrectAnswer);
     
     // Move to the next question immediately
     handleNextQuestion();
   };
 
-  const calculateScore = () => {
+  const calculateScore = (isCorrectAnswer) => {
     let correctAnswers = 0;
+    let wrongAnswers = 0;
+
     questions.forEach((question, index) => {
       if (selectedAnswers[index] === question.correctAnswer) {
         correctAnswers++;
+      } else if (selectedAnswers[index] !== null) {
+        wrongAnswers++;
       }
     });
+
+    // Increment the correct score if the answer is correct
+    if (isCorrectAnswer) {
+      correctAnswers++;
+    }
+
+    // Decrement the wrong score if the answer is not correct
+    if (!isCorrectAnswer && selectedAnswers[currentQuestionIndex] !== null) {
+      wrongAnswers--;
+    }
+
     setScore(correctAnswers);
+    setWrongAnswers(wrongAnswers);
   };
 
   const handleNextQuestion = () => {
@@ -87,20 +106,20 @@ function AccountingApi() {
 
   if (currentQuestionIndex === questions.length) {
     // If the current question index is equal to the total number of questions, show result
-    return <ResultComponent score={score} totalQuestions={questions.length} />;
+    return <ResultComponent score={score} totalQuestions={questions.length} wrongAnswers={wrongAnswers} />;
   }
 
   return (
     <div className="app">
-      <h1 className="title">Accountant Session</h1>
+      <h1 className="title">Who Wants to Be an Accountant?</h1>
       <div className="instructions">
         <p>Answer the following questions correctly to win!</p>
         <p>You have {timer} seconds to answer each question.</p>
       </div>
       <div className="question-container">
         <div className="question">
-          <h3 id='questionIndex'>Question {currentQuestionIndex + 1}:</h3>
-          <p id='questions'>{questions[currentQuestionIndex]?.question}</p>
+          <h3>Question {currentQuestionIndex + 1}:</h3>
+          <p>{questions[currentQuestionIndex]?.question}</p>
           <ul>
             {questions[currentQuestionIndex]?.options.map((option, index) => (
               <li 
