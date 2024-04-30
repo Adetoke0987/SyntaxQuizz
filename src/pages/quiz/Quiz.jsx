@@ -1,112 +1,53 @@
 
-
-import { NavLink } from 'react-router-dom'
-import "./Quiz.css";
-import { useState } from 'react';
+import  "./Quiz.css"
+import React from 'react'
+import AccountingProf from "./allCategories/professional/acct/AccountingProf";
+import ProjectMgtProf from "./allCategories/professional/project/ProjectMgtProf";
+import IctProf from "./allCategories/professional/ict/IctProf";
+import LogisticsProf from "./allCategories/professional/logic/LogisticsProf";
+import HumanRProf from "./allCategories/professional/hr/HumanRProf";
+import BusinessAdminProf from "./allCategories/professional/bizAdmin/BusinessAdminProf";
+import MarketingProf from "./allCategories/professional/mrkt/MarketingProf";
+import AddQuestionsProf from "./allCategories/professional/addQuest/AddQuestionsProf";
+import  Accounting  from "./allCategories/entryLevel/acct/Accounting";
+import AddQuestions from "./allCategories/entryLevel/addQuest/AddQuestions";
+import BusinessAdmin from "./allCategories/entryLevel/bizAdmin/BusinessAdmin";
+import HumanR from "./allCategories/entryLevel/hr/HumanR";
+import  Ict  from "./allCategories/entryLevel/ict/Ict";
+import Logistics from "./allCategories/entryLevel/logic/Logistics";
+import Marketing from "./allCategories/entryLevel/mrkt/Marketing";
+import ProjectMgt from "./allCategories/entryLevel/project/ProjectMgt";
 
 const Quiz = () => {
-
-  const [pop, setPop] = useState(false);
-
-  const popHandler = () => {
-    setPop(!pop)
-  }
-
-
   return (
-    <div className='all_prof'>
-      <div className='categories-body' >
-         <h2 id='Et'>Entry Level</h2>
-        <div className='allQuiz'>
-          
-          <div className='project quizBox' onClick={popHandler}>
-            <h3 id='title'>Project Management</h3>
-          </div>
-          <div className='ict quizBox' onClick={popHandler}>
-            <h3 id='title'>Information Technology</h3>
-          </div>
-          <div className='acct quizBox' onClick={popHandler}>
-            <h3 id='title'>Accounting</h3>
-          </div>
-          <div className='logic quizBox' onClick={popHandler}>
-            <h3 id='title'>Logistics</h3>
-          </div>
-          <div className='hr quizBox' onClick={popHandler}>
-            <h3 id='title'>Human Resourse</h3>
-          </div>
-          <div className='ba quizBox' onClick={popHandler}>
-            <h3 id='title'>Business Adminstration</h3>
-          </div>
-          <div className='mkt quizBox' onClick={popHandler}>
-            <h3 id='title'>Marketing</h3>
-          </div>
-          <div className='add quizBox' onClick={popHandler}>
-            <h3 id='titleA'>+</h3>
-          </div>
+    <div className= 'all_prof'>
+       <div className= 'categories-body' >
+          <h2 id='Et'>Entry Level</h2>
+         <div className= 'allQuiz'>
+              <ProjectMgt/>
+              <Ict/>
+              <Accounting/>
+              <Logistics/>
+              <HumanR/>
+              <BusinessAdmin/>
+              <Marketing/>
+             <AddQuestions/>
+           </div>
         </div>
-        {pop && (
-          <div className='pop'>
-            <div className="popButtons">
-              <div className="pop__controls">
-                <button className="pop__close" type="button" onClick={popHandler}>Ⅹ</button>
-              </div>
-              <div className="allButtons">
-                <NavLink to="/questions" id='btn'><p id='p'>Easy</p></NavLink>
-                <NavLink to="/questions" id='btn'><p id='p'>Medium</p></NavLink>
-                <NavLink to="/questions" id='btn'><p id='p'>Hard</p></NavLink>
-
-              </div>
+        <div className= 'categories-body2' >
+           <h2 id='pl'>Professional Level</h2>
+           <div className= 'allQuiz2'>
+              <ProjectMgtProf/>
+              <IctProf/>
+              <AccountingProf/>
+              <LogisticsProf/>
+              <HumanRProf/>
+              <BusinessAdminProf/>
+              <MarketingProf/>
+              <AddQuestionsProf/>
             </div>
           </div>
-        )}
-
-      </div>
-        <div className='categories-body2' >
-          <h2 id='pl'>Proffessional Level</h2>
-        <div className='allQuiz2'>
-          <div className='project quizBox' onClick={popHandler}>
-            <h3 id='title'>Project Management</h3>
-          </div>
-          <div className='ict quizBox' onClick={popHandler}>
-            <h3 id='title'>Information Technology</h3>
-          </div>
-          <div className='acct quizBox' onClick={popHandler}>
-            <h3 id='title'>Accounting</h3>
-          </div>
-          <div className='logic quizBox' onClick={popHandler}>
-            <h3 id='title'>Logistics</h3>
-          </div>
-          <div className='hr quizBox' onClick={popHandler}>
-            <h3 id='title'>Human Resourse</h3>
-          </div>
-          <div className='ba quizBox' onClick={popHandler}>
-            <h3 id='title'>Business Adminstration</h3>
-          </div>
-          <div className='mkt quizBox' onClick={popHandler}>
-            <h3 id='title'>Marketing</h3>
-          </div>
-          <div className='add quizBox' onClick={popHandler}>
-            <h3 id='titleA'>+</h3>
-          </div>
         </div>
-        {pop && (
-          <div className='pop'>
-            <div className="popButtons">
-              <div className="pop__controls">
-                <button className="pop__close" type="button" onClick={popHandler}>Ⅹ</button>
-              </div>
-              <div className="allButtons">
-                <NavLink to="/questions" id='btn'><p id='p'>Easy</p></NavLink>
-                <NavLink to="/questions" id='btn'><p id='p'>Medium</p></NavLink>
-                <NavLink to="/questions" id='btn'><p id='p'>Hard</p></NavLink>
-
-              </div>
-            </div>
-          </div>
-        )}
-
-      </div>
-    </div>
   )
 }
 

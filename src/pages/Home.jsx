@@ -28,7 +28,7 @@ const Home = () => {
               questions for your team to make better decision and promotions
             </p>
 
-            <div className={style.btndiv}>
+            <div className= {style.btndiv}>
               <Link to={"/login"}>
                 <button type="button" className={style.button}>
                   Let's do it

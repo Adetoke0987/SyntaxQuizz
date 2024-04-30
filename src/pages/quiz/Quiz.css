@@ -36,7 +36,7 @@
 }
 
 
-.allQuiz{
+ .allQuiz{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -48,124 +48,16 @@
     justify-content: space-around;
     align-items: center;
     margin-left: 5%;
-}
+} 
 
-.quizBox{
-    height: 150px;
-    width: 150px;
-    display: flex;
-    border: none;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    border-radius:20px ;
-    cursor: pointer;
-
-}
-
-.pop{
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    cursor: pointer;
-    z-index: 9;
-}
-
-.pop__close{
-    border: none;
-    color: rgb(37, 37, 37);
-    background-color: rgb(233, 233, 233);
-    border: none;
-}
-
-.pop__close:hover{
-    background-color: rgb(195, 190, 190);
-    
-}
-
-.popButtons{
-    display: flex;
-    background-color: rgb(224, 224, 224);
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    z-index: 10;
-    padding: 30px;
-    width: fit-content;
-    height: fit-content;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    gap: 20px;
-    margin-top: 25%;
-}
-
-.allButtons{
-  
-    display: flex;
-    flex-direction: column;
-}
-
-.project{
-    background-color: rgb(91, 27, 91);
-}
-.ict{
-    background-color: rgb(37, 169, 192);
-}
-
-.acct{
-    background-color: rgb(253, 54, 87);
-}
-
-.logic{
-    background-color: rgb(16, 231, 238);
-}
-
-.hr{
-    background-color: rgb(255, 123, 0);
-}
-
-.ba{
-    background-color: rgb(255, 0, 242);
-}
-
-.mkt{
-    background-color: rgb(0, 255, 42);
-}
-
-.add{
-    border: 2px solid white;
+#pl{
+    margin-left: 3%;
    
 }
 
-#btn{
-    width: 200px;
-    background-color: rgb(48, 58, 58);
-    color: white;
-    border-radius: 5px;
-    height: 10px;
-    font-size: 15px;
-    
+#Et{
+    margin-left: 3%;
+   
 }
 
-#btn:hover{
-    background-color: rgb(123, 123, 123);
-    color: black;
-}
-
-#p{
-    color: white;
-    margin-left: 40%;
-    font-size: 17px;
-}
-
-#p:hover{
-    color: rgb(13, 13, 13);
-
-}
 

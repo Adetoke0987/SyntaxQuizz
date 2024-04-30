@@ -14,6 +14,20 @@ import QuizSetting from "./pages/dashboard/settings/QuizSetting";
 import Quiz from "./pages/quiz/Quiz";
 import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
 import Congratulation from "./pages/quiz/Congratulation";
+import AccountingApi from "./pages/quiz/allCategories/entryLevel/acct/AccountingApi";
+import BusAdminApi from "./pages/quiz/allCategories/entryLevel/bizAdmin/BusAdminApi";
+import HumanRApi from "./pages/quiz/allCategories/entryLevel/hr/HumanRApi";
+import IctApi from "./pages/quiz/allCategories/entryLevel/ict/IctApi";
+import LogicApi from "./pages/quiz/allCategories/entryLevel/logic/LogicApi";
+import MarketApi from "./pages/quiz/allCategories/entryLevel/mrkt/MarketApi";
+import ProjectApi from "./pages/quiz/allCategories/entryLevel/project/ProjectApi";
+import AccountApiPL from "./pages/quiz/allCategories/professional/acct/AccountApiPL";
+import BusAdminApiPL from "./pages/quiz/allCategories/professional/bizAdmin/BusAdminApiPL";
+import HumanRApiPF from "./pages/quiz/allCategories/professional/hr/HumanRApiPF";
+import IctApiPF from "./pages/quiz/allCategories/professional/ict/IctApiPF";
+import LogicApiPF from "./pages/quiz/allCategories/professional/logic/LogicApiPF";
+import MarketApiPF from "./pages/quiz/allCategories/professional/mrkt/MarketApiPF";
+import ProjectApiPF from "./pages/quiz/allCategories/professional/project/ProjectApiPF";
 
 
 const router = createBrowserRouter ([
@@ -25,8 +39,6 @@ const router = createBrowserRouter ([
                 index: "true",
                 element: <Home />
             },
-           
-         
             {
                 path: "/help",
                 element: <Help/>
@@ -48,6 +60,64 @@ const router = createBrowserRouter ([
                 path: "/questions",
                 element: <Questions/>
             },
+
+            {
+                path:"/dashboard/quiz/accountingET",
+                element: <AccountingApi/>
+            },
+            {
+                path:"/dashboard/quiz/busAdminET",
+                element : <BusAdminApi/>
+            },
+            {
+                path:"/dashboard/quiz/hrET",
+                element:<HumanRApi/>
+            },
+            {
+                path:"/dashboard/quiz/ictET",
+                element:<IctApi/>
+            },
+            {
+                path:"/dashboard/quiz/logicET",
+                element:<LogicApi/>
+            },
+            {
+                path:"/dashboard/quiz/marktET",
+                element:<MarketApi/>
+            },
+            {
+                path:"/dashboard/quiz/projectET",
+                element:<ProjectApi/>
+            },
+            {
+                path:"/dashboard/quiz/accountingPF",
+                element:<AccountApiPL/>
+            },
+            {
+                path:"/dashboard/quiz/busAdminPF",
+                element:<BusAdminApiPL/>
+            },
+            {
+                path:"/dashboard/quiz/hrPF",
+                element:<HumanRApiPF/>
+            },
+            {
+                path:"/dashboard/quiz/ictPF",
+                element:<IctApiPF/>
+            },
+            {
+                path:"/dashboard/quiz/logicPF",
+                element:<LogicApiPF/>
+            },
+            {
+                path:"/dashboard/quiz/marktPF",
+                element:<MarketApiPF/>
+            },
+            {
+                path:"/dashboard/quiz/projectPF",
+                element:<ProjectApiPF/>
+            },
+
             {
                 path: "/dashboard",
                 element: <Dashboard/>,
@@ -76,7 +146,7 @@ const router = createBrowserRouter ([
                     },
                     {
                         path: '/dashboard/quiz',
-                        element : <Quiz/>
+                        element : <Quiz/>,
                     },
                     {
                         path: '/dashboard/records',
