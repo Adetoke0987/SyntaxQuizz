@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Inputs from './Inputs';
+import style from "./login.module.css";
 
 const LoginComponent = () => {
   const [formData, setFormData] = useState({
@@ -18,12 +20,14 @@ const LoginComponent = () => {
     }));
   };
 
+  // const {email,password} =formData
+
   const submitHandler = async (e) => {
     e.preventDefault();
     console.log(formData);
     try {
       const response = await axios.post(
-        'https://questionsapi.onrender.com/auth/users',
+        'https://questionsapi.onrender.com/auth/user/id',
         formData
       );
       const token = response.data.data.token;
@@ -39,31 +43,67 @@ const LoginComponent = () => {
     }
   };
   
+
+  const logInInputs = [
+    {
+      labelText: "Email",
+      inputType: "email",
+      placeholderText: "Enter Your Email",
+      inputName: "email",
+      inputValue: formData.email,
+    },
+    {
+      labelText: "Password",
+      inputType: "password",
+      placeholderText: "Password",
+      inputName: "password",
+      inputValue: formData.password,
+    },
+  ];
+
+
   return (
-    <>
-      <form onSubmit={submitHandler}>
-        <input
-          type="email"
-          placeholder="email"
-          onChange={handleChange}
-          name="email"
-          value={formData.email}
-        />
-        <input
-          type="password"
-          placeholder="password"
-          onChange={handleChange}
-          name="password"
-          value={formData.password}
-        />
-        <button type="submit">Log in</button>
+    <div className={style.main}>
+      <form onSubmit={submitHandler} className={style.loginform}>
+      {logInInputs.map(
+          ({
+            labelText,
+            inputType,
+            inputName,
+            placeholderText,
+            inputValue,
+          }) => {
+            return (
+              <Inputs
+                inputfunc={handleChange}
+                labelText={labelText}
+                inputType={inputType}
+                inputName={inputName}
+                placeholderText={placeholderText}
+                key={labelText}
+                inputValue={inputValue}
+                
+              />
+            );
+          }
+        )}
+         <div className={style.formSubmit}>
+          
+            <button type='submit' className={style.button}>Log in</button>
+        </div>
+
+        <div className={style.not}>
+          <p className={style.p}>Dont have an Account?</p>
+          <Link to={"/signup"} className={style.h2}>Register</Link>
+        </div>
       </form>
       {tooltipMessage && (
         <div className="tooltip">
           {tooltipMessage}
         </div>
       )}
-    </>
+    </div>
+    
   );
 };
 
