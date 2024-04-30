@@ -111,7 +111,7 @@ function IctApi() {
 
   return (
     <div className="app">
-      <h1 className="title">Who Wants to Be an Accountant?</h1>
+      <h1 className="title">ICT Section</h1>
       <div className="instructions">
         <p>Answer the following questions correctly to win!</p>
         <p>You have {timer} seconds to answer each question.</p>
