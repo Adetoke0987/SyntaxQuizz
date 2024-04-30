@@ -12,12 +12,12 @@ import { IoIosArrowDropdown, IoIosArrowDropright } from "react-icons/io"; // Usi
 const Sidebar = ({ onLogout }) => {
   // Logout function
   const handleLogout = () => {
-    if (typeof onLogout === "function") {
-      onLogout();
-    }
-  };
 
-  // State for managing dropdown menu
+    localStorage.removeItem("accessToken"); 
+
+    window.location.href = "/login"; 
+  
+  };
   const [showSettingsDropdown, setShowSettingsDropdown] = useState(false);
 
   const change = () => {
