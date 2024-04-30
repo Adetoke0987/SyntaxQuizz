@@ -3,7 +3,7 @@ import "./project.css"
 import { NavLink } from 'react-router-dom'
 const ProjectMgt = () => {
   return (
-    <NavLink to="">
+    <NavLink to="/dashboard/quiz/projectET">
       <div className= 'project quizBox' >
         <h3 id='title'>Project Management</h3>
     </div>
