@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -14,4 +15,22 @@ a{
 }
 /* a:hover{
     color: rebeccapurple;
+=======
+
+
+
+a{
+    /* display: flex; */
+    /* align-items: center; */
+    padding: 1em 0 1em 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+    width: 100%;
+    /* height: 100%; */
+    margin: 2px;
+}
+/* a:hover{
+    color: rebeccapurple;
+>>>>>>> parent of f341fdb (update)
 } */

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .all_prof{
     display: flex;
     flex-direction: column;
@@ -61,3 +62,68 @@
 }
 
 
+=======
+.all_prof{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height:  100%;
+    margin-top: 10%;
+    gap: 40px;
+    width: 100%;
+   
+}
+
+#title{
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    
+
+  }
+
+#titleA{
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: lighter;
+    
+
+}
+
+
+ .allQuiz{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.allQuiz2{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5%;
+} 
+
+#pl{
+    margin-left: 3%;
+   
+}
+
+#Et{
+    margin-left: 3%;
+   
+}
+
+
+>>>>>>> parent of f341fdb (update)
