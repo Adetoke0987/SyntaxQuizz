@@ -7,6 +7,8 @@ const LoginComponent = () => {
     email: '',
     password: '',
   });
+  const [tooltipMessage, setTooltipMessage] = useState(''); // State to manage tooltip message
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,14 +26,19 @@ const LoginComponent = () => {
         'https://questionsapi.onrender.com/auth/users',
         formData
       );
-      const token = await response.data.data.token;
+      const token = response.data.data.token;
       localStorage.setItem('token', token);
-      console.log('Sign In successful:', response.data.data.token);
-      useNavigate('/home');
+      console.log('Sign In successful:', token);
+      setTooltipMessage('Login successful'); // Set success tooltip message
+      setTimeout(() => {
+        setTooltipMessage(''); // Clear the tooltip message after 5 seconds
+        navigate('/dashboard'); // Navigate to dashboard after clearing the tooltip
+      }, 5000); // Delay in milliseconds
     } catch (error) {
-      console.error('Signup failed:', error);
+      console.error('Login failed:', error);
     }
   };
+  
   return (
     <>
       <form onSubmit={submitHandler}>
@@ -51,6 +58,11 @@ const LoginComponent = () => {
         />
         <button type="submit">Log in</button>
       </form>
+      {tooltipMessage && (
+        <div className="tooltip">
+          {tooltipMessage}
+        </div>
+      )}
     </>
   );
 };
