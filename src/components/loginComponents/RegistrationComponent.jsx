@@ -3,17 +3,18 @@ import Inputs from "./Inputs";
 import { userData } from "./UserContext";
 import { Link } from "react-router-dom";
 import style from "./login.module.css";
-const RegistrationComponent = () => {
-  //The Context that will be available on all pages is the users which contains the user detils
-  const { users, updateUser } = useContext(userData);
+import axios from 'axios';
 
+const RegistrationComponent = () => {
+  const { users, updateUser } = useContext(userData);
   const [userDetails, setUserDetails] = useState({
-    fullname: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
   });
+  const [tooltipMessage, setTooltipMessage] = useState(""); // State to manage tooltip message
 
-  //A function to handle the changes observed on the input feilds
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setUserDetails({
@@ -22,29 +23,44 @@ const RegistrationComponent = () => {
     });
   };
 
-  const addUsers = (e) => {
+  const addUsers = async (e) => {
     e.preventDefault();
-    updateUser([...users, userDetails]);
-    setUserDetails({
-      fullname: "",
-      email: "",
-      password: "",
-    });
-
-    console.log(users);
+    try {
+      const response = await axios.post(
+        'https://questionsapi.onrender.com/auth/signup',
+        userDetails
+      );
+      setTooltipMessage("User successfully registered"); // Set success tooltip message
+      updateUser([...users, userDetails]);
+      setUserDetails({
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+      });
+    } catch (error) {
+      setTooltipMessage("Invalid user details"); // Set error tooltip message
+      console.error('Signup failed:', error.response.data);
+    }
   };
 
-  // An Array containing the input properties from the ./inputs.jsx
   const inputs = [
     {
-      labelText: "Full Name",
+      labelText: "First Name",
       inputType: "text",
-      placeholderText: "Enter Your Name",
-      inputName: "fullname",
-      inputValue: userDetails.fullname,
+      placeholderText: "Enter Your First Name",
+      inputName: "firstname",
+      inputValue: userDetails.firstname,
     },
     {
-      labelText: "Working Email",
+      labelText: "Last Name",
+      inputType: "text",
+      placeholderText: "Enter Your Last Name",
+      inputName: "lastname",
+      inputValue: userDetails.lastname,
+    },
+    {
+      labelText: "Email",
       inputType: "email",
       placeholderText: "Enter Your Email",
       inputName: "email",
@@ -53,7 +69,7 @@ const RegistrationComponent = () => {
     {
       labelText: "Password",
       inputType: "password",
-      placeholderText: "",
+      placeholderText: "Enter Your Password",
       inputName: "password",
       inputValue: userDetails.password,
     },
@@ -85,12 +101,11 @@ const RegistrationComponent = () => {
           }
         )}
         <div className={style.formSubmit}>
-          <Link to="/login"> <button className={style.button}>Submit</button></Link>
-         
+          <button type="submit" className={style.button}>Submit</button>
+          {tooltipMessage && <span className={style.tooltip}>{tooltipMessage}</span>}
         </div>
         <div className={style.not}>
           <p className={style.p}>Have an Account?</p>
-
           <Link to="/login" className={style.h2}> Login</Link>
         </div>
       </form>
