@@ -1,0 +1,110 @@
+.active{
+  background-color: darkblue;
+}
+
+.navbarContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color:whitesmoke; */
+    /* color: black; */
+    height: 9vh;
+    align-items: center;
+    padding: 0 2em 0 2em;
+  }
+  .hamburger{
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .hamburger:hover{
+    font-size: 40px;
+    padding: 10px;
+    color: orange;
+  }
+  .text2{
+    display: flex;
+    align-items: center;
+    /* color: black; */
+  
+  }
+  .logocontainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+
+    /* background-color:orange; */
+  }
+
+  .logo {
+    width: 6em; 
+    height: 4em;
+  }
+  
+  .linkscontainer {
+    display: flex;
+    align-items: center;
+    width: 22vw;
+    /* transition: transform 5.5s ease;
+    transform: translateY(-40%); */
+
+
+  }
+  .linkscontainer:hover{
+    width: 24vw;
+  }
+  /* .linkscontainer .navlink .active{
+    transform: translateY(0);
+  } */
+  
+ .navlink {
+    color: black;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 20px;
+    /* opacity: 0;
+    transition: opacity 5.5s ease; */
+  
+  }
+  /* .linkscontainer .navlink.show{
+    opacity: 1;
+  } */
+  
+  .navlink:hover {
+    /* text-decoration: none; */
+    text-align: center;
+    font-size: 30px;
+    border: 2px solid orange;
+    /* background-color: bisque; */
+    width: 100px;
+    border-radius: 5px;
+    height: 100%;
+    margin-left: 10px;
+  }
+
+  
+  .createbutton {
+    background-color: rgb(245, 160, 3);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: small;
+  }
+  
+  .createbutton:hover {
+    background-color: white;
+    font-size: 20px;
+    color: orange;
+    cursor: pointer;
+
+  }
+
+ 
+  
