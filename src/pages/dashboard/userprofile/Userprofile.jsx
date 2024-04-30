@@ -7,20 +7,17 @@ const UserProfile = ({ user }) => {
     return <div>Loading...</div>;
   }
 
-  const { fullname, email, imageUrl, quizStats } = user;
+  const { firstName, lastName, email, quizStats } = user;
+
+  // Get the first letter of the first name and last name
+  const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`;
 
   return (
     <div className="user-profile">
-      {/* Display user image if available */}
-      {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={`${fullname}'s profile picture`}
-          className="profile-image"
-        />
-      )}
+      {/* Display user initials as a placeholder image */}
+      <div className="profile-initials">{initials}</div>
       <div className="profile-details">
-        <h2>{fullname || "Unknown"}</h2>
+        <h2>{`${firstName} ${lastName}` || "Unknown"}</h2>
         <p>Email: {email || "Unknown"}</p>
       </div>
       {quizStats && (
