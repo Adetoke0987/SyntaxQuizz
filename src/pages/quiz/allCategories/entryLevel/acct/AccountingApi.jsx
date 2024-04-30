@@ -92,15 +92,15 @@ function AccountingApi() {
 
   return (
     <div className="app">
-      <h1 className="title">Who Wants to Be an Accountant?</h1>
+      <h1 className="title">Accountant Session</h1>
       <div className="instructions">
         <p>Answer the following questions correctly to win!</p>
         <p>You have {timer} seconds to answer each question.</p>
       </div>
       <div className="question-container">
         <div className="question">
-          <h3>Question {currentQuestionIndex + 1}:</h3>
-          <p>{questions[currentQuestionIndex]?.question}</p>
+          <h3 id='questionIndex'>Question {currentQuestionIndex + 1}:</h3>
+          <p id='questions'>{questions[currentQuestionIndex]?.question}</p>
           <ul>
             {questions[currentQuestionIndex]?.options.map((option, index) => (
               <li 
