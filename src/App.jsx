@@ -1,19 +1,23 @@
-import { RouterProvider } from "react-router-dom";
-import router from "./router";
-// import { ColorModeProvider } from './context/ColorModeContext';
-import UserContext from "./components/loginComponents/UserContext";
-import './App.css'
 
-function App() {
+import { UserProvider } from './context/UserContext'
+import React from 'react';
+import { RouterProvider } from 'react-router-dom';
+import {AuthProvider} from './routes/AuthContext'
+import router from './router.jsx';
+
+
+const App = () => {
   return (
-    <>
-      {/* <ColorModeProvider> */}
-        <UserContext>
-          <RouterProvider router={router} />
-        </UserContext>
-      {/* </ColorModeProvider> */}
-    </>
+    <div>
+      <UserProvider>
+        <AuthProvider>
+      <RouterProvider router={router} />
+      </AuthProvider>
+      </UserProvider>
+    </div>
   );
-}
+};
 
 export default App;
+
+

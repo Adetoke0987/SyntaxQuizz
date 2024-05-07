@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './help.css'; // Import your CSS file for styling
+import age from './css/help.module.css'; // Import your CSS file for styling
 
 function Help() {
     const [activeIndex, setActiveIndex] = useState(null);
@@ -11,8 +11,8 @@ function Help() {
     return (
         <div className="accordion">
             {helpData.map((item, index) => (
-                <div className="accordion-item" key={index}>
-                    <div className="accordion-title" onClick={() => handleClick(index)}>
+                <div className={age.accordion-item} key={index}>
+                    <div className={age.accordion-title} onClick={() => handleClick(index)}>
                         {item.question}
                         <span className={`icon ${index === activeIndex ? 'active' : ''}`}>&#9660;</span>
                     </div>

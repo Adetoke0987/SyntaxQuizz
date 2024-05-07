@@ -1,166 +1,138 @@
-import { createBrowserRouter } from "react-router-dom";
-import MainLayout from "./layout/MainLayout";
-import Home from "./pages/Home";
-import Help from "./pages/Help";
-import LoginComponent from "./components/loginComponents/LoginComponent";
-import Questions from "./pages/quiz/Questions";
-import UserProfile from "./pages/dashboard/userprofile/Userprofile";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Settings from "./pages/dashboard/settings/Settings";
-import Sets from "./pages/dashboard/settings/Sets";
-import Records from "./pages/dashboard/records/Records";
-import NotificationSetting from "./pages/dashboard/settings/NotificationSettings";
-import QuizSetting from "./pages/dashboard/settings/QuizSetting";
-import Quiz from "./pages/quiz/Quiz";
-import RegistrationComponent from "./components/loginComponents/RegistrationComponent";
-import Congratulation from "./pages/quiz/Congratulation";
-import AccountingApi from "./pages/quiz/allCategories/entryLevel/acct/AccountingApi";
-import BusAdminApi from "./pages/quiz/allCategories/entryLevel/bizAdmin/BusAdminApi";
-import HumanRApi from "./pages/quiz/allCategories/entryLevel/hr/HumanRApi";
-import IctApi from "./pages/quiz/allCategories/entryLevel/ict/IctApi";
-import LogicApi from "./pages/quiz/allCategories/entryLevel/logic/LogicApi";
-import MarketApi from "./pages/quiz/allCategories/entryLevel/mrkt/MarketApi";
-import ProjectApi from "./pages/quiz/allCategories/entryLevel/project/ProjectApi";
-import AccountApiPL from "./pages/quiz/allCategories/professional/acct/AccountApiPL";
-import BusAdminApiPL from "./pages/quiz/allCategories/professional/bizAdmin/BusAdminApiPL";
-import HumanRApiPF from "./pages/quiz/allCategories/professional/hr/HumanRApiPF";
-import IctApiPF from "./pages/quiz/allCategories/professional/ict/IctApiPF";
-import LogicApiPF from "./pages/quiz/allCategories/professional/logic/LogicApiPF";
-import MarketApiPF from "./pages/quiz/allCategories/professional/mrkt/MarketApiPF";
-import ProjectApiPF from "./pages/quiz/allCategories/professional/project/ProjectApiPF";
 
 
-const router = createBrowserRouter ([
-    {
-        path: "/",
+import React from 'react';
+import { createBrowserRouter } from 'react-router-dom';
+// import ProtectedRoute from './routes/ProtectedRoute';
+import Userdashboard from './pages/particitant/userdashboard/Userdashboard';
+import MainLayout from './components/MainLayout';
+import Home from './pages/Home';
+import SignInAs from './pages/signInAs/SignInAs';
+import SignUp from './pages/signUp/SignUp';
+import CreateQuestion from './pages/admin/admindashboard/CreateQuestion';
+import Login from './pages/login/Login';
+import DashboardMain from './pages/admin/admindashboard/DashboardMain';
+import Accounting from './questions/accounting/Accounting';
+import BuinessAdmin from './questions/businessAdmin/BuinessAdmin';
+import Marketing from './questions/marketing/Marketing'
+import InformationTech from './questions/informationTech/InformationTech';
+import Logistics from './questions/logicstics/Logicstics'
+import Result from './pages/admin/admindashboard/Result';
+import ProjectManagement from './questions/projectManagement/ProjectManagement';
+import Loading from './components/loading/Loading';
+import Admin from './pages/admin/admindashboard/Admin';
+import SignInAdmin from './pages/signInAdmin/SignInAdmin';
+import LogoutAdmin from './pages/admin/admindashboard/LogoutAdmin';
+import AddUser from './pages/admin/admindashboard/AddUser';
+import DeleteUser from './pages/admin/admindashboard/DeleteUser';
+import Settings from './pages/admin/admindashboard/Settings';
+import ViewUsers from './pages/admin/admindashboard/ViewUsers';
+
+
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/signInAs',
+    element: <SignInAs />,
+  },
+  {
+    path: '/signin',
+    element: <SignUp />,
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+ 
+  {
+    path: '/signinadmin',
+    element: <SignInAdmin/>,
+  },
+  {
+    path: '/accounting',
+    element: <Accounting/>,
+  },
+  {
+    path: '/buinessAdmin',
+    element: <BuinessAdmin/>,
+  },
+  {
+    path: '/infomationTech',
+    element: <InformationTech/>,
+  },
+  {
+    path: '/logistics',
+    element: <Logistics/>,
+  },
+  {
+    path: '/marketing',
+    element: <Marketing/>,
+  },
+  {
+    path: '/projectManagement',
+    element: <ProjectManagement/>,
+  },
+  {
+    path: '/userdashboard',
+    element: <Userdashboard />,
+    children: [
+      {
+        index: true,
         element: <MainLayout />,
-        children: [
-            {
-                index: "true",
-                element: <Home />
-            },
-            {
-                path: "/help",
-                element: <Help/>
-            },
-            {
-                path: "/login",
-                element: <LoginComponent/>
-            },
-            {
-                path: "/signup",
-                element: <RegistrationComponent />
-            },
-            {
-                path: "*",
-                element: "Page not found"
-            }, 
-            
-            {
-                path: "/questions",
-                element: <Questions/>
-            },
+      },
+    ],
+  },
 
-            {
-                path:"/dashboard/quiz/accountingET",
-                element: <AccountingApi/>
-            },
-            {
-                path:"/dashboard/quiz/busAdminET",
-                element : <BusAdminApi/>
-            },
-            {
-                path:"/dashboard/quiz/hrET",
-                element:<HumanRApi/>
-            },
-            {
-                path:"/dashboard/quiz/ictET",
-                element:<IctApi/>
-            },
-            {
-                path:"/dashboard/quiz/logicET",
-                element:<LogicApi/>
-            },
-            {
-                path:"/dashboard/quiz/marktET",
-                element:<MarketApi/>
-            },
-            {
-                path:"/dashboard/quiz/projectET",
-                element:<ProjectApi/>
-            },
-            {
-                path:"/dashboard/quiz/accountingPF",
-                element:<AccountApiPL/>
-            },
-            {
-                path:"/dashboard/quiz/busAdminPF",
-                element:<BusAdminApiPL/>
-            },
-            {
-                path:"/dashboard/quiz/hrPF",
-                element:<HumanRApiPF/>
-            },
-            {
-                path:"/dashboard/quiz/ictPF",
-                element:<IctApiPF/>
-            },
-            {
-                path:"/dashboard/quiz/logicPF",
-                element:<LogicApiPF/>
-            },
-            {
-                path:"/dashboard/quiz/marktPF",
-                element:<MarketApiPF/>
-            },
-            {
-                path:"/dashboard/quiz/projectPF",
-                element:<ProjectApiPF/>
-            },
+  {
+    path: '/admin',
+    element: (
+      // <ProtectedRoute>
+        <DashboardMain/>
+      // </ProtectedRoute>
+    ),
+    children:[
+      {
+        index: true,
+        element: <Admin/>
+      },
+      {
+        path: '/admin/createQuiz',
+        element: <CreateQuestion />,
+      },
+      {
+        path: '/admin/results',
+        element: <Result/>,
+      },
+      {
+        path : '/admin/addUser',
+        element: <AddUser/>
+      },
+      {
+        path: '/admin/viewusers',
+        element: <ViewUsers/>
+      },
+      {
+        path : '/admin/deleteUser',
+        element: <DeleteUser/>
+      },
+      {
+        path: "/admin/logout",
+        element : <LogoutAdmin/>
+      },
+      {
+        path: '/admin/settings',
+        element: <Settings/>
+      },
 
-            {
-                path: "/dashboard",
-                element: <Dashboard/>,
-                children: [
-                    {
-                        index: true,
-                        element: <UserProfile/>
-                    }, 
-                    {
-                        path: '/dashboard/settings',
-                        element: <Sets/>,
-                        children:[
-                            {
-                                index: true,
-                                element: <Settings/>
-                            },
-                            {
-                                path: '/dashboard/settings/notification',
-                                element: <NotificationSetting/>
-                            },
-                            {
-                                path: '/dashboard/settings/quizset',
-                                element: <QuizSetting/>
-                            }
-                        ]
-                    },
-                    {
-                        path: '/dashboard/quiz',
-                        element : <Quiz/>,
-                    },
-                    {
-                        path: '/dashboard/records',
-                        element: <Records/>
-                    },
-                    {
-                        path: "/dashboard/congratulation",
-                        element: <Congratulation/>
-                    }
-                ]
-            }
+    ]
+  },
+  {
+    path: '/loading',
+    element: <Loading />,
+  },
+]);
 
-        ]
-    }
-])
-
-export default router
+export default router;

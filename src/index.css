@@ -1,15 +1,38 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  --text-color: #333;
-  --background: #fff;
+*{
+    text-decoration: none;
+   }
 
-}
 body{
-  background-image: url(../../../src/assets/HomeBackground.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  overflow: hidden;
+    font-family: "Montserrat", sans-serif;  
+    /* line-height: 1.6; */
+    /* font-size: 0.9rem; */
 }
+
+h1, h2, h3, h4, h5, h6{
+  line-height: 1.1;
+}
+
+h1{
+font-size: 3rem;
+}
+
+h2{
+font-size:1.5rem;
+}
+
+h3{
+font-size: 1.6rem;
+}
+
+h4{
+font-size: 1.1rem;
+}
+
+h5{
+font-size: 0.95rem;
+}
+
+h6{
+font-size: 0.8rem;
+}
+
